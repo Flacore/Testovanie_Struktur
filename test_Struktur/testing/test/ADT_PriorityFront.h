@@ -7,6 +7,7 @@
 #include "../time.h";
 
 #define POCET_OPERACII 100
+//#define POCET_OPERACII 100000
 #define FILE "vysledky/uloha2/"
 
 namespace std {
@@ -18,9 +19,9 @@ namespace std {
 			vyber_(vyber+vloz),
 			ukaz_(ukaz+vyber+vloz),
 
-			nazov_operacie_(new structures::Array<std::string>(POCET_OPERACII)),
-			cas_operacie_Heap(new structures::Array<int>(POCET_OPERACII)),
-			cas_operacie_Array(new structures::Array<int>(POCET_OPERACII)),
+			nazov_operacie_(new std::string[POCET_OPERACII]),
+			cas_operacie_Heap(new double[POCET_OPERACII]),
+			cas_operacie_Array(new double[POCET_OPERACII]),
 
 			heap_(new structures::Heap<int>()),
 			array_(new structures::PriorityQueueSortedArrayList<int>())
@@ -35,7 +36,7 @@ namespace std {
 			delete heap_;
 			delete array_;
 
-			delete nazov_operacie_;
+			//delete nazov_operacie_;
 			delete cas_operacie_Array;
 			delete cas_operacie_Heap;
 		}
@@ -56,9 +57,9 @@ namespace std {
 		structures::Heap<int>* heap_;
 		structures::PriorityQueueSortedArrayList<int>* array_;
 
-		structures::Array<std::string>* nazov_operacie_;
-		structures::Array<int>* cas_operacie_Heap;
-		structures::Array<int>* cas_operacie_Array;
+		std::string* nazov_operacie_;
+		double* cas_operacie_Heap;
+		double* cas_operacie_Array;
 
 		Time time_;
 	private:
@@ -100,17 +101,17 @@ namespace std {
 			int priority = 0;
 			int value = 0;
 
-			int time = time_.getTime();
+			time_.setStart();
 			heap_->push(priority, value);
-			time -= time_.getTime();
-			(*cas_operacie_Heap)[i] = time;
+			time_.setEnd();
+			(cas_operacie_Heap)[i] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			array_->push(priority, value);
-			time -= time_.getTime();
-			(*cas_operacie_Array)[i] = time;
+			time_.setEnd();
+			(cas_operacie_Array)[i] = time_.getDuration();
 
-			(*nazov_operacie_)[i] = "1. Vloz.";
+			(nazov_operacie_)[i] = "1. Vloz.";
 
 			count_i++;
 			recap = 0;
@@ -126,17 +127,17 @@ namespace std {
 		if (POCET_OPERACII * (double(vyber_ - vloz_) / 100) > count_g) {
 			int trashbin_ = 0;
 
-			int time = time_.getTime();
+			time_.setStart();
 			trashbin_ = heap_->pop();
-			time -= time_.getTime();
-			(*cas_operacie_Heap)[i] = time;
+			time_.setEnd();
+			(cas_operacie_Heap)[i] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			trashbin_ = array_->pop();
-			time -= time_.getTime();
-			(*cas_operacie_Array)[i] = time;
+			time_.setEnd();
+			(cas_operacie_Array)[i] = time_.getDuration();
 			
-			(*nazov_operacie_)[i] = "2. Vyber.";
+			(nazov_operacie_)[i] = "2. Vyber.";
 
 			count_g++;
 			recap = 0;
@@ -152,17 +153,17 @@ namespace std {
 		if (POCET_OPERACII * (double(ukaz_ - vyber_) / 100) > count_s) {
 			int trashbin_ = 0;
 
-			int time = time_.getTime();
+			time_.setStart();
 			trashbin_ = heap_->peek();
-			time -= time_.getTime();
-			(*cas_operacie_Heap)[i] = time;
+			time_.setEnd();
+			(cas_operacie_Heap)[i] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			trashbin_ = array_->peek();
-			time -= time_.getTime();
-			(*cas_operacie_Array)[i] = time;
+			time_.setEnd();
+			(cas_operacie_Array)[i] = time_.getDuration();
 
-			(*nazov_operacie_)[i] = "3. Ukaz.";
+			(nazov_operacie_)[i] = "3. Ukaz.";
 
 			count_s++;
 			recap = 0;
@@ -177,18 +178,18 @@ namespace std {
 	{
 		file* file_ = new file(FILE, scenarioName);
 
-		file_->addItem("n,Nazov Operacie,Cas list,Cas Array,");
+		file_->addItem("n,Nazov Operacie,Cas Array list,Cas Heap,");
 		file_->newLine();
 
-		for (int n = 0; n < nazov_operacie_->size(); n++) {
+		for (int n = 0; n < POCET_OPERACII; n++) {
 			file_->addItem(to_string(n + 1));
 			file_->addComma();
-			file_->addItem((*nazov_operacie_)[n]);
+			file_->addItem((nazov_operacie_)[n]);
 			file_->addComma();
-			file_->addItem(to_string((*cas_operacie_List)[n]));
+			file_->addItem(to_string((cas_operacie_Array)[n]));
 			file_->addComma();
-			file_->addItem(to_string((*cas_operacie_Array)[n]));
-			if (n < nazov_operacie_->size() - 1) {
+			file_->addItem(to_string((cas_operacie_Heap)[n]));
+			if (n < POCET_OPERACII - 1) {
 				file_->newLine();
 			}
 		}

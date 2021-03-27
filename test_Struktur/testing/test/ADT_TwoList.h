@@ -3,7 +3,8 @@
 
 #include <string>
 
-#define POCET_OPERACII 100000
+#define POCET_OPERACII 100
+//#define POCET_OPERACII 100000
 #define FILE "vysledky/uloha5/"
 
 namespace std {
@@ -15,10 +16,10 @@ namespace std {
 			vyber_(vyber + vloz),
 			ukaz_(ukaz + vyber + vloz),
 
-			nazov_operacie_(new structures::Array<std::string>(POCET_OPERACII)),
-			cas_operacie_pq1(new structures::Array<int>(POCET_OPERACII)),
-			cas_operacie_pq2(new structures::Array<int>(POCET_OPERACII)),
-			cas_operacie_pq3(new structures::Array<int>(POCET_OPERACII)),
+			nazov_operacie_(new std::string[POCET_OPERACII]),
+			cas_operacie_pq1(new double[POCET_OPERACII]),
+			cas_operacie_pq2(new double[POCET_OPERACII]),
+			cas_operacie_pq3(new double[POCET_OPERACII]),
 
 			pq_1(new structures::PriorityQueueTwoLists<int>((POCET_OPERACII/1000))),
 			pq_2(new structures::PriorityQueueTwoLists<int>()),
@@ -35,7 +36,7 @@ namespace std {
 			delete pq_2;
 			delete pq_3;
 
-			delete nazov_operacie_;
+			//delete nazov_operacie_;
 			delete cas_operacie_pq1;
 			delete cas_operacie_pq2;
 			delete cas_operacie_pq3;
@@ -60,10 +61,10 @@ namespace std {
 		structures::PriorityQueueTwoLists<int>* pq_2;
 		structures::PriorityQueueTwoLists<int>* pq_3;
 
-		structures::Array<std::string>* nazov_operacie_;
-		structures::Array<int>* cas_operacie_pq1;
-		structures::Array<int>* cas_operacie_pq2;
-		structures::Array<int>* cas_operacie_pq3;
+		std::string* nazov_operacie_;
+		double* cas_operacie_pq1;
+		double* cas_operacie_pq2;
+		double* cas_operacie_pq3;
 
 		Time time_;
 	private:
@@ -108,24 +109,22 @@ namespace std {
 			int priority = 0;
 			int value = 0;
 
-			int time = time_.getTime();
+			time_.setStart();
 			pq_1->push(priority, value);
-			time -= time_.getTime();
-			(*cas_operacie_pq1)[i] = time;
+			time_.setEnd();
+			(cas_operacie_pq1)[i] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			pq_2->push(priority, value);
-			time -= time_.getTime();
-			(*cas_operacie_pq2)[i] = time;
-			pq_2->setCapacityOfShortlist(round(sqrt(pq_2->size())));
+			time_.setEnd();
+			(cas_operacie_pq2)[i] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			pq_3->push(priority, value);
-			time -= time_.getTime();
-			(*cas_operacie_pq2)[i] = time;
-			pq_3->setCapacityOfShortlist(round(pq_2->size() / 2));
+			time_.setEnd();
+			(cas_operacie_pq3)[i] = time_.getDuration();
 
-			(*nazov_operacie_)[i] = "1. Vloz.";
+			(nazov_operacie_)[i] = "1. Vloz.";
 
 			count_i++;
 			recap = 0;
@@ -141,24 +140,22 @@ namespace std {
 		if (POCET_OPERACII * (double(vyber_ - vloz_) / 100) > count_g) {
 			int trashbin_ = 0;
 
-			int time = time_.getTime();
+			time_.setStart();
 			trashbin_ = pq_1->pop();
-			time -= time_.getTime();
-			(*cas_operacie_pq1)[i] = time;
+			time_.setEnd();
+			(cas_operacie_pq1)[i] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			trashbin_ = pq_2->pop();
-			time -= time_.getTime();
-			(*cas_operacie_pq2)[i] = time;
-			pq_2->setCapacityOfShortlist(round(sqrt(pq_2->size())));
+			time_.setEnd();
+			(cas_operacie_pq2)[i] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			trashbin_ = pq_3->pop();
-			time -= time_.getTime();
-			(*cas_operacie_pq2)[i] = time;
-			pq_3->setCapacityOfShortlist(round(pq_2->size() / 2));
+			time_.setEnd();
+			(cas_operacie_pq3)[i] = time_.getDuration();
 
-			(*nazov_operacie_)[i] = "2. Vyber.";
+			(nazov_operacie_)[i] = "2. Vyber.";
 
 			count_g++;
 			recap = 0;
@@ -174,22 +171,22 @@ namespace std {
 		if (POCET_OPERACII * (double (ukaz_ - vyber_) / 100) > count_s) {
 			int trashbin_ = 0;
 
-			int time = time_.getTime();
+			time_.setStart();
 			trashbin_ = pq_1->peek();
-			time -= time_.getTime();
-			(*cas_operacie_pq1)[i] = time;
+			time_.setEnd();
+			(cas_operacie_pq1)[i] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			trashbin_ = pq_2->peek();
-			time -= time_.getTime();
-			(*cas_operacie_pq2)[i] = time;
+			time_.setEnd();
+			(cas_operacie_pq2)[i] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			trashbin_ = pq_3->peek();
-			time -= time_.getTime();
-			(*cas_operacie_pq3)[i] = time;
+			time_.setEnd();
+			(cas_operacie_pq3)[i] = time_.getDuration();
 
-			(*nazov_operacie_)[i] = "3. Ukaz.";
+			(nazov_operacie_)[i] = "3. Ukaz.";
 
 			count_s++;
 			recap = 0;
@@ -202,7 +199,30 @@ namespace std {
 
 	inline void ADT_TwoList::saveToFiles()
 	{
-		//TODO
+		file* file_ = new file(FILE, scenarioName);
+
+		file_->addItem("n,Nazov Operacie,Cas 1/1000,Cas sqrt(n), Cas n/2,");
+		file_->newLine();
+
+		for (int n = 0; n < POCET_OPERACII; n++) {
+			file_->addItem(to_string(n + 1));
+			file_->addComma();
+			file_->addItem((nazov_operacie_)[n]);
+			file_->addComma();
+			file_->addItem(to_string((cas_operacie_pq1)[n]));
+			file_->addComma();
+			file_->addItem(to_string((cas_operacie_pq2)[n]));
+			file_->addComma();
+			file_->addItem(to_string((cas_operacie_pq3)[n]));
+			if (n < POCET_OPERACII - 1) {
+				file_->newLine();
+			}
+		}
+
+		std::string name = FILE;
+
+		file_->saveFile();
+		delete file_;
 	}
 
 }

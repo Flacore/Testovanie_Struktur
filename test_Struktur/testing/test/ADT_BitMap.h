@@ -17,7 +17,8 @@
 #define MAX_VALUE 10000
 #define MIN_SIZE 10
 #define MAX_SIZE 100000
-#define POCET_OPERACII 100000
+#define POCET_OPERACII 100
+//#define POCET_OPERACII 100000
 #define FILE "vysledky/uloha6/"
 
 namespace std {
@@ -35,9 +36,9 @@ namespace std {
 			shorter_ = new ByteSet<int>(MIN_VALUE, MAX_VALUE);
 			longer_ = new ByteSet<unsigned long long>(MIN_VALUE, MAX_VALUE);
 
-			nazov_operacie_ = new structures::Array<string>(POCET_OPERACII);
-			cas_operacie_Shorter = new structures::Array<int>(POCET_OPERACII);
-			cas_operacie_Longer = new structures::Array<int>(POCET_OPERACII);
+			nazov_operacie_ = new string[POCET_OPERACII];
+			cas_operacie_Shorter = new int[POCET_OPERACII];
+			cas_operacie_Longer = new int[POCET_OPERACII];
 		}
 
 		~ADT_BitMap() {
@@ -50,7 +51,7 @@ namespace std {
 			delete shorter_;
 			delete longer_;
 
-			delete nazov_operacie_;
+			//delete nazov_operacie_;
 			delete cas_operacie_Longer;
 			delete cas_operacie_Shorter;
 		}
@@ -76,9 +77,9 @@ namespace std {
 		ByteSet<int>* shorter_;
 		ByteSet<unsigned long long>* longer_;
 
-		structures::Array<string>* nazov_operacie_;
-		structures::Array<int>* cas_operacie_Shorter;
-		structures::Array<int>* cas_operacie_Longer;
+		string* nazov_operacie_;
+		int* cas_operacie_Shorter;
+		int* cas_operacie_Longer;
 
 		Time time_;
 	private:
@@ -95,10 +96,10 @@ namespace std {
 
 	inline void ADT_BitMap::do_testing()
 	{
-		int choice = 0;
+		int choice = zrus_ + 1;
 
 		for (i = 0; i < POCET_OPERACII; i++) {
-			choice = (rand() % 100) + 0;
+			
 
 			if (choice <= zrus_) {
 				remove();
@@ -113,6 +114,8 @@ namespace std {
 			if (LogOperacie_ < choice && choice <= MnozOperacie_) {
 				SetOp();
 			}
+
+			choice = (rand() % 100) + 0;
 		}
 
 		saveTesting();
@@ -124,18 +127,18 @@ namespace std {
 
 		if (POCET_OPERACII * ((double(zrus_) / 100)) > count_1) {
 
-			int time = time_.getTime();
+			time_.setStart();
 			shorter_->remove(value);
-			time -= time_.getTime();
-			(*cas_operacie_Shorter)[i] = time;
+			time_.setEnd();
+			(cas_operacie_Shorter)[i] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			longer_->remove(value);
-			time -= time_.getTime();
-			(*cas_operacie_Longer)[i] = time;
+			time_.setEnd();
+			(cas_operacie_Longer)[i] = time_.getDuration();
 
 
-			(*nazov_operacie_)[i] = "1. Odstranovanie.";
+			(nazov_operacie_)[i] = "1. Odstranovanie.";
 
 			recal = 0;
 			count_1++;
@@ -152,17 +155,17 @@ namespace std {
 
 		if (POCET_OPERACII * (double(vloz_ - zrus_) / 100) > count_2 || recal > 5) {
 
-			int time = time_.getTime();
+			time_.setStart();
 			shorter_->insert(value);
-			time -= time_.getTime();
-			(*cas_operacie_Shorter)[i] = time;
+			time_.setEnd();
+			(cas_operacie_Shorter)[i] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			longer_->insert(value);
-			time -= time_.getTime();
-			(*cas_operacie_Longer)[i] = time;
+			time_.setEnd();
+			(cas_operacie_Longer)[i] = time_.getDuration();
 
-			(*nazov_operacie_)[i] = "2. Vkladanie.";
+			(nazov_operacie_)[i] = "2. Vkladanie.";
 
 			count_2++;
 			recal = 0;
@@ -183,43 +186,43 @@ namespace std {
 			if (choose == 1) {
 				int value = (rand() % MAX_VALUE) + MIN_VALUE;
 
-				int time = time_.getTime();
+				time_.setStart();
 				tmp = shorter_->isIn(value);
-				time -= time_.getTime();
-				(*cas_operacie_Shorter)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Shorter)[i] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				tmp = longer_->isIn(value);
-				time -= time_.getTime();
-				(*cas_operacie_Longer)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Longer)[i] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "3. Patri.";
+				(nazov_operacie_)[i] = "3. Patri.";
 			}
 			if (choose == 2) {
-				int time = time_.getTime();
+				time_.setStart();
 				tmp = (shorter_ == shorter_);
-				time -= time_.getTime();
-				(*cas_operacie_Shorter)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Shorter)[i] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				tmp = (longer_ == longer_);
-				time -= time_.getTime();
-				(*cas_operacie_Longer)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Longer)[i] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "3. Je rovna.";
+				(nazov_operacie_)[i] = "3. Je rovna.";
 			}
 			if (choose == 3) {
-				int time = time_.getTime();
+				time_.setStart();
 				tmp = shorter_->isSubset(*shorter_);
-				time -= time_.getTime();
-				(*cas_operacie_Shorter)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Shorter)[i] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				tmp = longer_->isSubset(*longer_);
-				time -= time_.getTime();
-				(*cas_operacie_Longer)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Longer)[i] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "3. Je podmnozina.";
+				(nazov_operacie_)[i] = "3. Je podmnozina.";
 			}
 
 			count_3++;
@@ -237,43 +240,43 @@ namespace std {
 			int choose = (rand() % 3) + 1;
 
 			if (choose == 1 ) {
-				int time = time_.getTime();
+				time_.setStart();
 				shorter_->setUnion(*shorter_);
-				time -= time_.getTime();
-				(*cas_operacie_Shorter)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Shorter)[i] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				longer_->setUnion(*longer_);
-				time -= time_.getTime();
-				(*cas_operacie_Longer)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Longer)[i] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "4. Zjednotenie.";
+				(nazov_operacie_)[i] = "4. Zjednotenie.";
 			}
 			if (choose == 2) {
-				int time = time_.getTime();
+				time_.setStart();
 				shorter_->intersection(*shorter_);
-				time -= time_.getTime();
-				(*cas_operacie_Shorter)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Shorter)[i] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				longer_->intersection(*longer_);
-				time -= time_.getTime();
-				(*cas_operacie_Longer)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Longer)[i] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "4. Prienik.";
+				(nazov_operacie_)[i] = "4. Prienik.";
 			}
 			if (choose == 3) {
-				int time = time_.getTime();
+				time_.setStart();
 				shorter_->difference(*shorter_);
-				time -= time_.getTime();
-				(*cas_operacie_Shorter)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Shorter)[i] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				longer_->difference(*longer_);
-				time -= time_.getTime();
-				(*cas_operacie_Longer)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Longer)[i] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "4. Rozdiel.";
+				(nazov_operacie_)[i] = "4. Rozdiel.";
 			}
 
 			count_4++;
@@ -287,7 +290,28 @@ namespace std {
 
 	inline void ADT_BitMap::saveTesting()
 	{
-		//TODO
+		file* file_ = new file(FILE, scenarioName);
+
+		file_->addItem("n,Nazov Operacie,Cas Longer,Cas Shorter,");
+		file_->newLine();
+
+		for (int n = 0; n < POCET_OPERACII; n++) {
+			file_->addItem(to_string(n + 1));
+			file_->addComma();
+			file_->addItem((nazov_operacie_)[n]);
+			file_->addComma();
+			file_->addItem(to_string((cas_operacie_Longer)[n]));
+			file_->addComma();
+			file_->addItem(to_string((cas_operacie_Shorter)[n]));
+			if (n < POCET_OPERACII - 1) {
+				file_->newLine();
+			}
+		}
+
+		std::string name = FILE;
+
+		file_->saveFile();
+		delete file_;
 	}
 
 }

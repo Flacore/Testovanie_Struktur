@@ -8,7 +8,8 @@
 #include "../file.h";
 #include "../time.h";
 
-#define POCET_OPERACII 100000
+#define POCET_OPERACII 100
+//#define POCET_OPERACII 100000
 #define FILE "vysledky/uloha1/"
 
 namespace std {
@@ -23,14 +24,14 @@ namespace std {
 			item_index_(item_index + vloz + zrus),
 			set_(set + item_index + vloz + zrus),
 
-			nazov_operacie_(new structures::Array<std::string>(POCET_OPERACII)),
-			cas_operacie_List(new structures::Array<int>(POCET_OPERACII)),
-			cas_operacie_Array(new structures::Array<int>(POCET_OPERACII)),
+			nazov_operacie_(new std::string [POCET_OPERACII]),
+			cas_operacie_List(new double[POCET_OPERACII]),
+			cas_operacie_Array(new double[POCET_OPERACII]),
 
 			array_(new structures::ArrayList<int>()),
 			list_(new structures::LinkedList<int>())
 		{
-			recap = i = count_i = count_s = count_v = count_z = 0;
+			count_a = recap = i = count_i = count_s = count_v = count_z = 0;
 		}
 
 		~ADT_List()
@@ -38,7 +39,6 @@ namespace std {
 			scenarioName = "";
 			delete array_;
 			delete list_;
-			delete nazov_operacie_;
 			delete cas_operacie_List;
 			delete cas_operacie_Array;
 			count_i = count_s = count_v = count_z = 0;
@@ -47,6 +47,7 @@ namespace std {
 			item_index_ = 0;
 			set_ = 0;
 			recap = i = 0;
+			count_a = 0;
 		}
 
 		void start_testing();
@@ -61,6 +62,7 @@ namespace std {
 		int item_index_;
 		int set_;
 
+		int count_a;
 		int count_v;
 		int count_z;
 		int count_i;
@@ -69,9 +71,9 @@ namespace std {
 		structures::ArrayList<int>* array_;
 		structures::LinkedList<int>* list_;
 
-		structures::Array<std::string>* nazov_operacie_;
-		structures::Array<int>* cas_operacie_List;
-		structures::Array<int>* cas_operacie_Array;
+		std::string* nazov_operacie_;
+		double* cas_operacie_List;
+		double* cas_operacie_Array;
 
 		Time time_;
 	private:
@@ -93,6 +95,10 @@ namespace std {
 
 		for (i = 0; i < POCET_OPERACII; i++) {
 			choice = (rand() % 100) + 0;
+
+			if (count_a == POCET_OPERACII) {
+				break;
+			}
 
 			if (choice <= zrus_) {
 				del();
@@ -119,17 +125,18 @@ namespace std {
 			int choose = (rand() % 3) + 1;
 			if (choose == 1 && count_v > 0 || recap > 5) {
 				choose == 1;
-				int time = time_.getTime();
+				
+				time_.setStart();
 				array_->insert(value, 0);
-				time -= time_.getTime();
-				(*cas_operacie_Array)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Array)[count_a] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				list_->insert(value, 0);
-				time -= time_.getTime();
-				(*cas_operacie_List)[i] = time;
+				time_.setEnd();
+				(cas_operacie_List)[count_a] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "1.Vloz prvy.";
+				nazov_operacie_[count_a] = "1.Vloz prvy";
 			}
 			if (choose == 2 && count_v > 0) {
 				int index = 0;
@@ -138,32 +145,33 @@ namespace std {
 					if (index < 0) index = 0;
 				}
 
-				int time = time_.getTime();
+				time_.setStart();
 				array_->insert(value, index);
-				time -= time_.getTime();
-				(*cas_operacie_Array)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Array)[count_a] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				list_->insert(value, index);
-				time -= time_.getTime();
-				(*cas_operacie_List)[i] = time;
+				time_.setEnd();
+				(cas_operacie_List)[count_a] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "1. Vloz na indexe.";
+				nazov_operacie_[count_a] = "1. Vloz na indexe";
 			}
 			if (choose == 3 || (choose != 0 && count_v == 0)) {
-				int time = time_.getTime();
+				time_.setStart();
 				array_->add(value);
-				time -= time_.getTime();
-				(*cas_operacie_Array)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Array)[count_a] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				list_->add(value);
-				time -= time_.getTime();
-				(*cas_operacie_List)[i] = time;
+				time_.setEnd();
+				(cas_operacie_List)[count_a] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "1. Vloz na koniec.";
+				nazov_operacie_[count_a] = "1. Vloz na koniec";
 			}
 
+			count_a++;
 			count_v++;
 			recap = 0;
 		}
@@ -178,17 +186,17 @@ namespace std {
 		if (POCET_OPERACII * (double(zrus_) / 100) > count_z && count_v >= 1 && array_->size() > 0) {
 			int choose = (rand() % 3) + 1;
 			if (choose == 1) {
-				int time = time_.getTime();
+				time_.setStart();
 				array_->removeAt(0);
-				time -= time_.getTime();
-				(*cas_operacie_Array)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Array)[count_a] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				list_->removeAt(0);
-				time -= time_.getTime();
-				(*cas_operacie_List)[i] = time;
+				time_.setEnd();
+				(cas_operacie_List)[count_a] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "2. Odstran prvy.";
+				nazov_operacie_[count_a] = "2. Odstran prvy";
 			}
 			if (choose == 2) {
 				int index = 0;
@@ -197,32 +205,33 @@ namespace std {
 					if (index < 0) index = 0;
 				}
 
-				int time = time_.getTime();
+				time_.setStart();
 				array_->removeAt(index);
-				time -= time_.getTime();
-				(*cas_operacie_Array)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Array)[count_a] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				list_->removeAt(index);
-				time -= time_.getTime();
-				(*cas_operacie_List)[i] = time;
+				time_.setEnd();
+				(cas_operacie_List)[count_a] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "2. Odstran na indexe.";
+				nazov_operacie_[count_a] = "2. Odstran na indexe";
 			}
 			if (choose == 3) {
-				int time = time_.getTime();
-				array_->removeAt(array_->size() - 1);
-				time -= time_.getTime();
-				(*cas_operacie_Array)[i] = time;
+				time_.setStart();
+				array_->removeAt(array_->size()-1);
+				time_.setEnd();
+				(cas_operacie_Array)[count_a] = time_.getDuration();
 
-				time = time_.getTime();
-				list_->removeAt(list_->size() - 1);
-				time -= time_.getTime();
-				(*cas_operacie_List)[i] = time;
+				time_.setStart();
+				list_->removeAt(list_->size()-1);
+				time_.setEnd();
+				(cas_operacie_List)[count_a] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "2. Odstran posledny.";
+				nazov_operacie_[count_a] = "2. Odstran posledny";
 			}
 
+			count_a++;
 			count_z++;
 			recap = 0;
 		}
@@ -244,34 +253,35 @@ namespace std {
 			if (rand() % POCET_OPERACII <= 50) {
 				int value = 0;
 
-				int time = time_.getTime();
+				time_.setStart();
 				value = (*array_)[index];
-				time -= time_.getTime();
-				(*cas_operacie_Array)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Array)[count_a] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				value = (*list_)[index];
-				time -= time_.getTime();
-				(*cas_operacie_List)[i] = time;
+				time_.setEnd();
+				(cas_operacie_List)[count_a] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "3. Spristupni.";
+				nazov_operacie_[count_a] = "3. Spristupni";
 			}
 			else {
-				int value = (rand() % POCET_OPERACII) + 0;
+				int long long value = (rand() % POCET_OPERACII) + 0;
 
-				int time = time_.getTime();
+				time_.setStart();
 				(*array_)[index] = value;
-				time -= time_.getTime();
-				(*cas_operacie_Array)[i] = time;
+				time_.setEnd();
+				(cas_operacie_Array)[count_a] = time_.getDuration();
 
-				time = time_.getTime();
+				time_.setStart();
 				(*list_)[index] = value;
-				time -= time_.getTime();
-				(*cas_operacie_List)[i] = time;
+				time_.setEnd();
+				(cas_operacie_List)[count_a] = time_.getDuration();
 
-				(*nazov_operacie_)[i] = "3. Nastav.";
+				nazov_operacie_[count_a] = "3. Nastav";
 			}
 
+			count_a++;
 			count_s++;
 			recap = 0;
 		}
@@ -286,18 +296,19 @@ namespace std {
 		if (POCET_OPERACII * (double(item_index_ - vloz_) / 100) > count_i) {
 			int value = (rand() % POCET_OPERACII) + 0;
 
-			int time = time_.getTime();
+			time_.setStart();
 			array_->getIndexOf(value);
-			time -= time_.getTime();
-			(*cas_operacie_Array)[i] = time;
+			time_.setEnd();
+			(cas_operacie_Array)[count_a] = time_.getDuration();
 
-			time = time_.getTime();
+			time_.setStart();
 			list_->getIndexOf(value);
-			time -= time_.getTime();
-			(*cas_operacie_List)[i] = time;
+			time_.setEnd();
+			(cas_operacie_List)[count_a] = time_.getDuration();
 
-			(*nazov_operacie_)[i] = "4. Index prvku.";
+			nazov_operacie_[count_a] = "4. Index Prvku";
 
+			count_a++;
 			count_i++;
 			recap = 0;
 		}
@@ -314,15 +325,15 @@ namespace std {
 		file_->addItem("n,Nazov Operacie,Cas list,Cas Array,");
 		file_->newLine();
 
-		for (int n = 0; n < nazov_operacie_->size(); n++) {
+		for (int n = 0; n < POCET_OPERACII; n++) {
 			file_->addItem(to_string(n+1));
 			file_->addComma();
-			file_->addItem((*nazov_operacie_)[n]);
+			file_->addItem(nazov_operacie_[n]);
 			file_->addComma();
-			file_->addItem(to_string((*cas_operacie_List)[n]));
+			file_->addItem(to_string((cas_operacie_List)[n]));
 			file_->addComma();
-			file_->addItem(to_string((*cas_operacie_Array)[n]));
-			if (n < nazov_operacie_->size() - 1) {
+			file_->addItem(to_string((cas_operacie_Array)[n]));
+			if (n < POCET_OPERACII - 1) {
 				file_->newLine();
 			}
 		}

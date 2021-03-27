@@ -14,11 +14,32 @@ public:
 	Time() {}
 	~Time() {}
 
+	/*
 	int long long getTime() {
-		struct timeval currentTime;
-		gettimeofday(&currentTime, NULL);
-		return currentTime.tv_sec * (int)1e6 + currentTime.tv_usec;
+		struct timeval time_now {};
+		gettimeofday(&time_now, nullptr);
+		time_t msecs_time = (time_now.tv_sec * 1000000) + (time_now.tv_usec / 1000000);
+		return msecs_time;
 	}
+	*/
+
+	double getDuration() {
+		std::chrono::duration<double, std::milli> elapsed = time_end - time_start;
+		return elapsed.count();
+	}
+
+	void setStart() {
+		time_start = std::chrono::high_resolution_clock::now();
+	}
+
+	void setEnd() {
+		time_end = std::chrono::high_resolution_clock::now();
+	}
+
+private:
+	chrono::high_resolution_clock::time_point time_start;
+
+	chrono::high_resolution_clock::time_point time_end;
 
 private:
 	int gettimeofday(struct timeval* tp, struct timezone* tzp) {

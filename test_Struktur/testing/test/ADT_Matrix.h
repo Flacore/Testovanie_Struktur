@@ -11,7 +11,8 @@
 #define MIN_VALUE 1
 #define MAX_VALUE 10
 #define MIN_SIZE 1
-#define MAX_SIZE 2000
+#define MAX_SIZE 20
+//#define MAX_SIZE 2000
 #define FILE "vysledky/uloha3/"
 
 namespace std {
@@ -20,8 +21,8 @@ namespace std {
 		ADT_Matrix(const int type, std::string scnr) :
 			scenarioName(scnr),
 			type_(type),
-			cas_operacie_Coherant(new structures::Array<int>(((MAX_SIZE-MIN_SIZE)+1)*2)),
-			cas_operacie_Incoherant(new structures::Array<int>(((MAX_SIZE - MIN_SIZE) + 1) * 2))
+			cas_operacie_Coherant(new int[(((MAX_SIZE-MIN_SIZE)+1)*2)]),
+			cas_operacie_Incoherant(new int[(((MAX_SIZE - MIN_SIZE) + 1) * 2)])
 		{
 			i = 0;
 		}
@@ -45,8 +46,8 @@ namespace std {
 		int type_;
 		int i;
 
-		structures::Array<int>* cas_operacie_Coherant;
-		structures::Array<int>* cas_operacie_Incoherant;
+		int* cas_operacie_Coherant;
+		int* cas_operacie_Incoherant;
 	private:
 		void scenarA_nesuvysla(int m, int n);
 
@@ -77,8 +78,6 @@ namespace std {
 					n = i;
 				}
 
-				cout << "m " << m << " n " << n << endl;
-
 				if (type_ == 1) {
 					scenarA_nesuvysla(m, n);
 					scenarA_suvysla(m, n);
@@ -99,14 +98,14 @@ namespace std {
 		naplnNesuvysla(m, n, matica1_);
 		structures::IncoherantMatrix<int>* vysledok_ = new structures::IncoherantMatrix<int>(m, n);
 
-		int time = time_.getTime();
+		time_.setStart();
 		for (int x = 0; x < m; x++) {
 			for (int y = 0; y < n; y++) {
 				(*vysledok_)(x, y) = (((*matica1_)(x, y)) + ((*matica1_)(x, y)));
 			}
 		}
-		time -= time_.getTime();
-		(*cas_operacie_Incoherant)[i] = time;
+		time_.setEnd();
+		(cas_operacie_Incoherant)[i] = time_.getDuration();
 
 		delete matica1_;
 		delete matica2_;
@@ -121,14 +120,14 @@ namespace std {
 		naplnSuvysla(m, n, matica1_);
 		structures::CoherantMatrix<int>* vysledok_ = new structures::CoherantMatrix<int>(m, n);
 
-		int time = time_.getTime();
+		time_.setStart();
 		for (int x = 0; x < m; x++) {
 			for (int y = 0; y < n; y++) {
 				(*vysledok_)(x, y) = (((*matica1_)(x, y)) + ((*matica1_)(x, y)));
 			}
 		}
-		time -= time_.getTime();
-		(*cas_operacie_Coherant)[i] = time;
+		time_.setEnd();
+		(cas_operacie_Coherant)[i] = time_.getDuration();
 
 		delete matica1_;
 		delete matica2_;
@@ -143,14 +142,14 @@ namespace std {
 		naplnNesuvysla(m, n, matica1_);
 		structures::IncoherantMatrix<int>* vysledok_ = new structures::IncoherantMatrix<int>(m, m);
 
-		int time = time_.getTime();
+		time_.setStart();
 		for (int x = 0; x < m; x++) {
 			for (int y = 0; y < n; y++) {
 				(*vysledok_)(x, y) = (((*matica1_)(x, y)) * ((*matica1_)(y, x)));
 			}
 		}
-		time -= time_.getTime();
-		(*cas_operacie_Incoherant)[i] = time;
+		time_.setEnd();
+		(cas_operacie_Incoherant)[i] = time_.getDuration();
 
 		delete matica1_;
 		delete matica2_;
@@ -165,14 +164,14 @@ namespace std {
 		naplnSuvysla(m, n, matica1_);
 		structures::CoherantMatrix<int>* vysledok_ = new structures::CoherantMatrix<int>(m, m);
 
-		int time = time_.getTime();
+		time_.setStart();
 		for (int x = 0; x < m; x++) {
 			for (int y = 0; y < n; y++) {
 				(*vysledok_)(x, y) = (((*matica1_)(x, y)) * ((*matica1_)(y, x)));
 			}
 		}
-		time -= time_.getTime();
-		(*cas_operacie_Coherant)[i] = time;
+		time_.setEnd();
+		(cas_operacie_Coherant)[i] = time_.getDuration();
 
 		delete matica1_;
 		delete matica2_;
@@ -199,6 +198,42 @@ namespace std {
 
 	inline void ADT_Matrix::saveFiles()
 	{
-		//TODO
+		file* file_ = new file(FILE, scenarioName);
+
+		file_->addItem("n,N,M,Cas Coherant,Cas Incoherant,");
+		file_->newLine();
+
+		for (int n = 0; n < (((MAX_SIZE - MIN_SIZE) + 1) * 2); n++) {
+			int N = 0;
+			int M = 0;
+
+			//Min Size -> Max Size
+			if (n < (MAX_SIZE-MIN_SIZE+1)) {
+				M = 1;
+				N = (n + MIN_SIZE);
+			}
+			else {
+				M = (n + MIN_SIZE) - MAX_SIZE;
+				N = 1;
+			}
+
+			file_->addItem(to_string(n + 1));
+			file_->addComma();
+			file_->addItem(to_string(N));
+			file_->addComma();
+			file_->addItem(to_string(M));
+			file_->addComma();
+			file_->addItem(to_string((cas_operacie_Coherant)[n]));
+			file_->addComma();
+			file_->addItem(to_string((cas_operacie_Incoherant)[n]));
+			if (n < (((MAX_SIZE - MIN_SIZE) + 1) * 2) - 1) {
+				file_->newLine();
+			}
+		}
+
+		std::string name = FILE;
+
+		file_->saveFile();
+		delete file_;
 	}
 }

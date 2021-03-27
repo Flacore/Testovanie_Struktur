@@ -8,8 +8,9 @@
 // [25%] Skup 3 -> Patrí, Je rovná, Je podmnožina
 // [25%] Skup 4 -> Zjednotenie, Prienik Rozdiel
 
-#include "../../structures/priority_queue/priority_queue_two_lists.h";
+#include <string>
 
+#include "../../structures/priority_queue/priority_queue_two_lists.h";
 #include "../../structures/bit_map/array_bit_map.h";
 
 #define MIN_VALUE 1
@@ -17,12 +18,13 @@
 #define MIN_SIZE 10
 #define MAX_SIZE 100000
 #define POCET_OPERACII 100000
-#define FILE "vysledky//uloha6//"
+#define FILE "vysledky/uloha6/"
 
 namespace std {
 	class ADT_BitMap {
 	public:
-		ADT_BitMap(const int vloz, const int zrus, const int LogOperacie, const int MnozOperacie):
+		ADT_BitMap(const int vloz, const int zrus, const int LogOperacie, const int MnozOperacie, std::string scnr):
+			scenarioName(scnr),
 			vloz_(vloz + zrus),
 			zrus_(zrus),
 			LogOperacie_(LogOperacie + vloz + zrus),
@@ -39,6 +41,8 @@ namespace std {
 		}
 
 		~ADT_BitMap() {
+			scenarioName = "";
+
 			recal = i = 0;
 			vloz_ = zrus_ = LogOperacie_ = MnozOperacie_ = 0;
 			count_1 = count_2 = count_3 = count_4 = 0;
@@ -55,6 +59,8 @@ namespace std {
 
 
 	private:
+		std::string scenarioName;
+
 		int i, recal;
 
 		int vloz_;

@@ -1,13 +1,16 @@
 #pragma once
 #include "../../structures/priority_queue/priority_queue_two_lists.h";
 
+#include <string>
+
 #define POCET_OPERACII 100000
-#define FILE "vysledky//uloha5//"
+#define FILE "vysledky/uloha5/"
 
 namespace std {
 	class ADT_TwoList {
 	public:
-		ADT_TwoList(const int vloz, const int vyber, const int ukaz):
+		ADT_TwoList(const int vloz, const int vyber, const int ukaz, std::string scnr) :
+			scenarioName(scnr),
 			vloz_(vloz),
 			vyber_(vyber + vloz),
 			ukaz_(ukaz + vyber + vloz),
@@ -25,6 +28,7 @@ namespace std {
 		}
 
 		~ADT_TwoList() {
+			scenarioName = "";
 			recap = i = vloz_ = vyber_ = ukaz_ = 0;
 			count_i = count_g = count_s = 0;
 			delete pq_1;
@@ -41,6 +45,8 @@ namespace std {
 
 
 	private:
+		std::string scenarioName;
+
 		int i, recap;
 		int vloz_;
 		int vyber_;

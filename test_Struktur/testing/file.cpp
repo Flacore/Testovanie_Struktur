@@ -17,7 +17,23 @@ file::~file()
 void file::addItem(std::string item)
 {
 	text_.append(item);
+}
+
+void file::addComma()
+{
 	text_.append(",");
+}
+
+void file::addSpacer()
+{
+		text_.append(" ");
+}
+
+void file::removeLastChar()
+{
+	if (text_.size() > 0) {
+		text_ = text_.substr(0, text_.size() - 1);
+	}
 }
 
 void file::newLine()
@@ -36,40 +52,62 @@ void file::saveFile()
 
 structures::Array<structures::Array<int>*>* file::loadFile(std::string path, std::string name, const int n)
 {
-	char trashBin;
+	std::string trash;
 
-	ifstream iFile(path+""+name);
-
-	int numOfLines = 0;
-	while (!iFile.eof())
-	{
-		numOfLines++;
-	}
-	iFile.close();
+	ifstream iFile(path.append(name));
 
 	structures::Array<structures::Array<int>*>* parameters =
-		new structures::Array<structures::Array<int>*>(numOfLines);
+		new structures::Array<structures::Array<int>*>(0);
 
-	int i = 0;
-	while (!iFile.eof())
-	{
-		(*parameters)[i] = new structures::Array<int>(n);
-		if (n == 4) {
-			iFile >> (*(*parameters)[i])[0] >> trashBin >> (*(*parameters)[i])[1] >> trashBin >> (*(*parameters)[i])[2] >> trashBin >> (*(*parameters)[i])[3];
+	if (!iFile.fail()) {
+		int numOfLines = 0;
+		while (!iFile.eof())
+		{
+			if (n == 4) {
+				iFile >> trash >> trash >> trash >> trash ;
+			}
+			else {
+				iFile >> trash >> trash >> trash;
+			}
+			numOfLines++;
 		}
-		else {
-			iFile >> (*(*parameters)[i])[0] >> trashBin >> (*(*parameters)[i])[1] >> trashBin >> (*(*parameters)[i])[2];
+
+		iFile.close();
+
+		parameters = new structures::Array<structures::Array<int>*>(numOfLines);
+
+		int i = 0;
+		ifstream iFile2(path);
+		while (!iFile2.eof())
+		{
+			if (i < numOfLines) {
+				(*parameters)[i] = new structures::Array<int>(n);
+				if (n == 4) {
+					int o1, o2, o3, o4;
+					iFile2 >> o1 >> o2 >> o3 >> o4;
+					(*(*parameters)[i])[0] = o1;
+					(*(*parameters)[i])[1] = o2;
+					(*(*parameters)[i])[2] = o3;
+					(*(*parameters)[i])[3] = o4;
+				}
+				else {
+					iFile2 >> (*(*parameters)[i])[0] >> (*(*parameters)[i])[1] >> (*(*parameters)[i])[2];
+				}
+			}
+			i++;
 		}
-		i++;
+		iFile2.close();
 	}
-	iFile.close();
 
 	return parameters;
 }
 
 void file::saveToFile(std::string text, std::string path,std::string fileName)
 {
-	std::ofstream out(path+""+fileName);
+	std::string file_;
+	file_.append(path);
+	file_.append(fileName);
+	std::ofstream out(file_);
 	out << text;
 	out.close();
 }

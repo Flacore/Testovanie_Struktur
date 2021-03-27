@@ -3,18 +3,21 @@
 #include "../../structures/list/array_list.h";
 #include "../../structures/list/linked_list.h";
 
+#include <string>
+
 #include "../file.h";
 #include "../time.h";
 
 #define POCET_OPERACII 100000
-#define FILE "vysledky//uloha1//"
+#define FILE "vysledky/uloha1/"
 
 namespace std {
 	class ADT_List {
 	public:
 		ADT_List(const int vloz, const int zrus,
-			const int item_index, const int set)
+			const int item_index, const int set, std::string scnr)
 			:
+			scenarioName(scnr),
 			zrus_(zrus),
 			vloz_(vloz + zrus),
 			item_index_(item_index + vloz + zrus),
@@ -32,6 +35,7 @@ namespace std {
 
 		~ADT_List()
 		{
+			scenarioName = "";
 			delete array_;
 			delete list_;
 			delete nazov_operacie_;
@@ -48,6 +52,8 @@ namespace std {
 		void start_testing();
 
 	private:
+		std::string scenarioName;
+
 		int i, recap;
 
 		int vloz_;
@@ -303,6 +309,27 @@ namespace std {
 
 	inline void ADT_List::saveToFiles()
 	{
-		//TODO
+		file* file_ = new file(FILE, scenarioName);
+
+		file_->addItem("n,Nazov Operacie,Cas list,Cas Array,");
+		file_->newLine();
+
+		for (int n = 0; n < nazov_operacie_->size(); n++) {
+			file_->addItem(to_string(n+1));
+			file_->addComma();
+			file_->addItem((*nazov_operacie_)[n]);
+			file_->addComma();
+			file_->addItem(to_string((*cas_operacie_List)[n]));
+			file_->addComma();
+			file_->addItem(to_string((*cas_operacie_Array)[n]));
+			if (n < nazov_operacie_->size() - 1) {
+				file_->newLine();
+			}
+		}
+
+		std::string name = FILE;
+
+		file_->saveFile();
+		delete file_;
 	}
 };

@@ -2,15 +2,18 @@
 #include "../../structures/priority_queue/heap.h";
 #include "../../structures/priority_queue/priority_queue_sorted_array_list.h";
 
+#include <string>
+
 #include "../time.h";
 
 #define POCET_OPERACII 100
-#define FILE "vysledky//uloha2//"
+#define FILE "vysledky/uloha2/"
 
 namespace std {
 	class ADT_PriorityFront {
 	public:
-		ADT_PriorityFront(const int vloz, const int vyber, const int ukaz) :
+		ADT_PriorityFront(const int vloz, const int vyber, const int ukaz , std::string scnr) :
+			scenarioName(scnr),
 			vloz_(vloz),
 			vyber_(vyber+vloz),
 			ukaz_(ukaz+vyber+vloz),
@@ -26,6 +29,7 @@ namespace std {
 		}
 
 		~ADT_PriorityFront() {
+			scenarioName = "";
 			recap = i = vloz_ = vyber_ = ukaz_ = 0;
 			count_i = count_g = count_s = 0;
 			delete heap_;
@@ -38,6 +42,8 @@ namespace std {
 
 		void do_testing();
 	private:
+		std::string scenarioName;
+
 		int i,recap;
 		int vloz_;
 		int vyber_;
@@ -169,7 +175,28 @@ namespace std {
 
 	inline void ADT_PriorityFront::saveToFiles()
 	{
-		//TODO
+		file* file_ = new file(FILE, scenarioName);
+
+		file_->addItem("n,Nazov Operacie,Cas list,Cas Array,");
+		file_->newLine();
+
+		for (int n = 0; n < nazov_operacie_->size(); n++) {
+			file_->addItem(to_string(n + 1));
+			file_->addComma();
+			file_->addItem((*nazov_operacie_)[n]);
+			file_->addComma();
+			file_->addItem(to_string((*cas_operacie_List)[n]));
+			file_->addComma();
+			file_->addItem(to_string((*cas_operacie_Array)[n]));
+			if (n < nazov_operacie_->size() - 1) {
+				file_->newLine();
+			}
+		}
+
+		std::string name = FILE;
+
+		file_->saveFile();
+		delete file_;
 	}
 
 }

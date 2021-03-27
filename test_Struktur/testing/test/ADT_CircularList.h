@@ -2,18 +2,21 @@
 
 #include "../../structures/list/doubly_circular_linked_list.h";
 
+#include <string>
+
 #include "../file.h";
 #include "../time.h";
 
 #define POCET_OPERACII 100000
-#define FILE "vysledky//uloha4//"
+#define FILE "vysledky/uloha4/"
 
 namespace std {
 	class ADT_CircularList {
 	public:
 		ADT_CircularList(const int vloz, const int zrus,
-			const int item_index, const int set)
+			const int item_index, const int set, std::string scnr)
 			:
+			scenarioName(scnr),
 			zrus_(zrus),
 			vloz_(vloz + zrus),
 			item_index_(item_index + vloz + zrus),
@@ -29,6 +32,7 @@ namespace std {
 
 		~ADT_CircularList()
 		{
+			scenarioName = "";
 			delete list_;
 			delete nazov_operacie_;
 			delete cas_operacie_;
@@ -43,6 +47,8 @@ namespace std {
 		void start_testing();
 
 	private:
+		std::string scenarioName;
+
 		int i,recap;
 
 		int vloz_;

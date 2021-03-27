@@ -1,6 +1,8 @@
 #pragma once
 #include "../../structures/priority_queue/priority_queue_two_lists.h";
 
+#include <string>
+
 #include "../time.h";
 
 #include "../../structures/matrix/coherant_matrix.h";
@@ -10,12 +12,13 @@
 #define MAX_VALUE 10
 #define MIN_SIZE 1
 #define MAX_SIZE 2000
-#define FILE "vysledky//uloha3//"
+#define FILE "vysledky/uloha3/"
 
 namespace std {
 	class ADT_Matrix {
 	public:
-		ADT_Matrix(const int type) :
+		ADT_Matrix(const int type, std::string scnr) :
+			scenarioName(scnr),
 			type_(type),
 			cas_operacie_Coherant(new structures::Array<int>(((MAX_SIZE-MIN_SIZE)+1)*2)),
 			cas_operacie_Incoherant(new structures::Array<int>(((MAX_SIZE - MIN_SIZE) + 1) * 2))
@@ -24,6 +27,7 @@ namespace std {
 		}
 
 		~ADT_Matrix() {
+			scenarioName = "";
 			delete cas_operacie_Coherant;
 			delete cas_operacie_Incoherant;
 			type_ = 0;
@@ -34,6 +38,8 @@ namespace std {
 
 
 	private:
+		std::string scenarioName;
+
 		Time time_;
 
 		int type_;

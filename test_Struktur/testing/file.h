@@ -18,6 +18,12 @@ public:
 
 	void addItem(std::string item);
 
+	void addComma();
+
+	void addSpacer();
+
+	void removeLastChar();
+
 	void newLine();
 
 	void saveFile();

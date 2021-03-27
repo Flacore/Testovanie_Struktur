@@ -1,0 +1,371 @@
+#include "test.h"
+
+#define PATH "scenare//"
+
+Test::Test()
+{
+}
+
+Test::~Test()
+{
+}
+
+void Test::uloha1()
+{
+	int vloz, zrus, index, set;
+	vloz = zrus = index = set = 25;
+
+	file* file_ = new file();
+	structures::Array<structures::Array<int>*>* scenario = (*file_).loadFile(PATH, "uloha1.txt", 4);
+	delete file_;
+
+	cout << "Choose testing scenario:" << endl;
+	cout << "1: insert 20%, delete 20%, get/set 50%, get index 10%"<< endl;
+	cout << "2: insert 35%, delete 35%, get/set 20%, get index 10%" << endl;
+	cout << "3: insert 45%, delete 45%, get/set 5%, get index 5%" << endl;
+	cout << "Own scenario:" << endl;
+	for (int i = 0; i < scenario->size(); i++) {
+		cout << i + 4 <<": insert "<<(*(*scenario)[i])[0]<<"%, delete "<< (*(*scenario)[i])[1] <<"%, get/set "<< (*(*scenario)[i])[2] <<"%, get index "<< (*(*scenario)[i])[3] <<"%" << endl;
+	}
+	cout << scenario->size() + 4 << ": create own scenario" << endl;
+
+	int choose = key_.getChoice(1, 3 + scenario->size());
+	
+	switch (choose)
+	{
+	case 1:
+		vloz = 20;
+		zrus = 20;
+		index = 10;
+		set = 50;
+		break;
+	case 2:
+		vloz = 35;
+		zrus = 35;
+		index = 10;
+		set = 20;
+		break;
+	case 3:
+		vloz = 45;
+		zrus = 45;
+		index = 5;
+		set = 5;
+		break;
+	default:
+		if (scenario->size() > 0) {
+			vloz = (*(*scenario)[choose - 4])[0];
+			zrus = (*(*scenario)[choose - 4])[1];
+			index = (*(*scenario)[choose - 4])[3];
+			set = (*(*scenario)[choose - 4])[2];
+		}
+		else {
+			createScenario(1);
+		}
+		break;
+	}
+
+	ADT_List* listTest = new ADT_List(vloz,zrus,index,set);
+	(*listTest).start_testing();
+	delete listTest;
+}
+
+void Test::uloha2()
+{
+	int vloz, vyber, ukaz;
+	vloz = 50;
+	vyber = ukaz = 25;
+
+	file* file_ = new file();
+	structures::Array<structures::Array<int>*>* scenario = (*file_).loadFile(PATH, "uloha2.txt", 3);
+	delete file_;
+
+	cout << "Choose testing scenario:" << endl;
+	cout << "1: insert 35%, get 35%, show 30%" << endl;
+	cout << "2: insert 50%, get 30%, show 20%" << endl;
+	cout << "3: insert 70%, get 25%, show 5%" << endl;
+	cout << "Own scenario:" << endl;
+	for (int i = 0; i < scenario->size(); i++) {
+		cout << i + 4 << ": insert " << (*(*scenario)[i])[0] << "%, get " << (*(*scenario)[i])[1] << "%, show " << (*(*scenario)[i])[2] << "%" << endl;
+	}
+	cout << scenario->size() + 4 << ": create own scenario" << endl;
+
+	int choose = key_.getChoice(1, 3 + scenario->size());
+	
+	switch (choose)
+	{
+	case 1:
+		vloz = 35;
+		ukaz = 35;
+		vyber = 30;
+		break;
+	case 2:
+		vloz = 50;
+		ukaz = 30;
+		vyber = 20;
+		break;
+	case 3:
+		vloz = 70;
+		ukaz = 25;
+		vyber = 5;
+		break;
+	default:
+		if (scenario->size() > 0) {
+			vloz = (*(*scenario)[choose - 4])[0];
+			vyber = (*(*scenario)[choose - 4])[1];
+			ukaz = (*(*scenario)[choose - 4])[2];
+		}
+		else {
+			createScenario(2);
+		}
+		break;
+	}
+
+	ADT_PriorityFront* pFront = new ADT_PriorityFront(vloz, vyber, ukaz);
+	(*pFront).do_testing();
+	delete pFront;
+}
+
+void Test::uloha3()
+{
+	int choice = 1;
+	cout << "Choose testing scenario:" << endl;
+	cout << "1: matrix sum." << endl;
+	cout << "2: matrix multiplication." << endl;
+	
+	int choose = key_.getChoice(1, 2);
+	
+	switch (choose)
+	{
+	case 1:
+		choice = 1;
+		break;
+	case 2:
+		choice = 2;
+		break;
+	default:
+		choice = 1;
+		break;
+	}
+
+	ADT_Matrix* matrixTest = new ADT_Matrix(choice);
+	(*matrixTest).do_testing();
+	delete matrixTest;
+
+}
+
+void Test::uloha4()
+{
+	int vloz, zrus, index, set;
+	vloz = zrus = index = set = 25;
+
+	file* file_ = new file();
+	structures::Array<structures::Array<int>*>* scenario = (*file_).loadFile(PATH, "uloha1.txt", 4);
+	delete file_;
+
+	cout << "Choose testing scenario:" << endl;
+	cout << "1: insert 20%, delete 20%, get/set 50%, get index 10%" << endl;
+	cout << "2: insert 35%, delete 35%, get/set 20%, get index 10%" << endl;
+	cout << "3: insert 45%, delete 45%, get/set 5%, get index 5%" << endl;
+	cout << "Own scenario:" << endl;
+	for (int i = 0; i < scenario->size(); i++) {
+		cout << i + 4 << ": insert " << (*(*scenario)[i])[0] << "%, delete " << (*(*scenario)[i])[1] << "%, get/set " << (*(*scenario)[i])[2] << "%, get index " << (*(*scenario)[i])[3] << "%" << endl;
+	}
+	cout << scenario->size() + 4 << ": create own scenario" << endl;
+
+	int choose = key_.getChoice(1, 3 + scenario->size());
+	
+	switch (choose)
+	{
+	case 1:
+		vloz = 20;
+		zrus = 20;
+		index = 10;
+		set = 50;
+		break;
+	case 2:
+		vloz = 35;
+		zrus = 35;
+		index = 10;
+		set = 20;
+		break;
+	case 3:
+		vloz = 45;
+		zrus = 45;
+		index = 5;
+		set = 5;
+		break;
+	default:
+		if (scenario->size() > 0) {
+			vloz = (*(*scenario)[choose - 4])[0];
+			zrus = (*(*scenario)[choose - 4])[1];
+			index = (*(*scenario)[choose - 4])[3];
+			set = (*(*scenario)[choose - 4])[2];
+		}
+		else {
+			createScenario(1);
+		}
+		break;
+	}
+
+	ADT_CircularList* listTest = new ADT_CircularList(vloz, zrus, index, set);
+	(*listTest).start_testing();
+	delete listTest;
+}
+
+void Test::uloha5()
+{
+	int vloz, vyber, ukaz;
+	vloz = 50;
+	vyber = ukaz = 25;
+
+	file* file_ = new file();
+	structures::Array<structures::Array<int>*>* scenario = (*file_).loadFile(PATH, "uloha2.txt", 3);
+	delete file_;
+
+	cout << "Choose testing scenario:" << endl;
+	cout << "1: insert 35%, get 35%, show 30%" << endl;
+	cout << "2: insert 50%, get 30%, show 20%" << endl;
+	cout << "3: insert 70%, get 25%, show 5%" << endl;
+	cout << "Own scenario:" << endl;
+	for (int i = 0; i < scenario->size(); i++) {
+		cout << i + 4 << ": insert " << (*(*scenario)[i])[0] << "%, get " << (*(*scenario)[i])[1] << "%, show " << (*(*scenario)[i])[2] << "%" << endl;
+	}
+	cout << scenario->size() + 4 << ": create own scenario" << endl;
+
+	int choose = key_.getChoice(1, 3 + scenario->size());
+
+	switch (choose)
+	{
+	case 1:
+		vloz = 35;
+		ukaz = 35;
+		vyber = 30;
+		break;
+	case 2:
+		vloz = 50;
+		ukaz = 30;
+		vyber = 20;
+		break;
+	case 3:
+		vloz = 70;
+		ukaz = 25;
+		vyber = 5;
+		break;
+	default:
+		if (scenario->size() > 0) {
+			vloz = (*(*scenario)[choose - 4])[0];
+			vyber = (*(*scenario)[choose - 4])[1];
+			ukaz = (*(*scenario)[choose - 4])[2];
+		}
+		else {
+			createScenario(2);
+		}
+		break;
+	}
+
+	ADT_TwoList* twoListTest = new ADT_TwoList(vloz, vyber, ukaz);
+	(*twoListTest).do_testing();
+	delete twoListTest;
+}
+
+void Test::uloha6()
+{
+	int vloz, zrus, LogOp, SetOp;
+	vloz = zrus = LogOp = SetOp = 25;
+
+
+	file* file_ = new file();
+	structures::Array<structures::Array<int>*>* scenario = (*file_).loadFile(PATH, "uloha6.txt", 4);
+	delete file_;
+
+	cout << "Choose testing scenario:" << endl;
+	cout << "1: insert 20%, delete 20%, logical operation 50%, set operation 10%" << endl;
+	cout << "2: insert 35%, delete 35%, logical operation 20%, set operation 10%" << endl;
+	cout << "Own scenario:" << endl;
+	for (int i = 0; i < scenario->size(); i++) {
+		cout << i + 3 << ": insert " << (*(*scenario)[i])[0] << "%, delete " << (*(*scenario)[i])[1] << "%, logical operation " << (*(*scenario)[i])[2] << "%, set operation " << (*(*scenario)[i])[3] << "%" << endl;
+	}
+
+	cout << scenario->size() + 3 << ": create own scenario" << endl;
+
+	int choose = key_.getChoice(1, 2 + scenario->size());
+
+	switch (choose)
+	{
+	case 1:
+		vloz = 20;
+		zrus = 20;
+		LogOp = 50;
+		SetOp = 10;
+		break;
+	case 2:
+		vloz = 35;
+		zrus = 35;
+		LogOp = 20;
+		SetOp = 10;
+		break;
+	default:
+		if (scenario->size() > 0) {
+			vloz = (*(*scenario)[choose - 3])[0];
+			zrus = (*(*scenario)[choose - 3])[1];
+			LogOp = (*(*scenario)[choose - 3])[1];
+			SetOp = (*(*scenario)[choose - 3])[3];
+		}
+		else {
+			createScenario(3);
+		}
+		break;
+	}
+
+	ADT_BitMap* bitMapTest = new ADT_BitMap(vloz, zrus, LogOp, SetOp);
+	(*bitMapTest).do_testing();
+	delete bitMapTest;
+}
+
+void Test::createScenario(int type)
+{
+	int size_ = 0;
+	if (type == 2) {
+		size_ = 3;
+	}
+	else {
+		size_ = 4;
+	}
+
+	structures::Array<int>* tmp = new structures::Array<int>(size_);
+
+	switch (type) {
+	case 1:
+		cout << "Insert" << endl;
+		(*tmp)[0] = key_.getChoice(0,100);
+		cout << "Remove" << endl;
+		(*tmp)[1] = key_.getChoice(0, 100);
+		cout << "Get/Set" << endl;
+		(*tmp)[2] = key_.getChoice(0, 100);
+		cout << "Get index" << endl;
+		(*tmp)[3] = key_.getChoice(0, 100);
+		break;
+	case 2:
+		cout << "Insert" << endl;
+		(*tmp)[0] = key_.getChoice(0, 100);
+		cout << "Get" << endl;
+		(*tmp)[1] = key_.getChoice(0, 100);
+		cout << "Show" << endl;
+		(*tmp)[2] = key_.getChoice(0, 100);
+		break;
+	case 3:
+		cout << "Insert" << endl;
+		(*tmp)[0] = key_.getChoice(0, 100);
+		cout << "Remove" << endl;
+		(*tmp)[1] = key_.getChoice(0, 100);
+		cout << "Logical operation" << endl;
+		(*tmp)[2] = key_.getChoice(0, 100);
+		cout << "Set operation" << endl;
+		(*tmp)[3] = key_.getChoice(0, 100);
+		break;
+	}
+
+	//TODO - Saving
+
+	delete tmp;
+}

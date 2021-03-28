@@ -8,8 +8,7 @@
 #include "../file.h";
 #include "../time.h";
 
-#define POCET_OPERACII 100
-//#define POCET_OPERACII 100000
+#define POCET_OPERACII 100000
 #define FILE "vysledky/uloha1/"
 
 namespace std {

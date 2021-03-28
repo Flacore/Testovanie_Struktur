@@ -366,6 +366,139 @@ void Test::uloha6()
 	delete bitMapTest;
 }
 
+void Test::autoTesting()
+{
+	for (int i = 1; i <= 3; i++) {
+
+		std::string csvName;
+		int vloz, zrus, index, set;
+
+		switch (i)
+		{
+		case 1:
+			csvName = "ScenarioA.csv";
+			vloz = 20;
+			zrus = 20;
+			index = 10;
+			set = 50;
+			break;
+		case 2:
+			csvName = "ScenarioB.csv";
+			vloz = 35;
+			zrus = 35;
+			index = 10;
+			set = 20;
+			break;
+		case 3:
+			csvName = "ScenarioC.csv";
+			vloz = 45;
+			zrus = 45;
+			index = 5;
+			set = 5;
+			break;
+		}
+
+		ADT_List* listTest = new ADT_List(vloz, zrus, index, set, csvName);
+		(*listTest).start_testing();
+		delete listTest;
+
+
+		ADT_CircularList* twolistTest = new ADT_CircularList(vloz, zrus, index, set, csvName);
+		(*twolistTest).start_testing();
+		delete twolistTest;
+	}
+
+	for (int i = 1; i <= 3; i++) {
+
+		std::string csvName;
+		int vloz, ukaz, vyber;
+
+		switch (i)
+		{
+		case 1:
+			csvName = "ScenarioA.csv";
+			vloz = 35;
+			ukaz = 35;
+			vyber = 30;
+			break;
+		case 2:
+			csvName = "ScenarioB.csv";
+			vloz = 50;
+			ukaz = 30;
+			vyber = 20;
+			break;
+		case 3:
+			csvName = "ScenarioC.csv";
+			vloz = 70;
+			ukaz = 25;
+			vyber = 5;
+			break;
+		}
+
+		ADT_PriorityFront* pFront = new ADT_PriorityFront(vloz, vyber, ukaz, csvName);
+		(*pFront).do_testing();
+		delete pFront;
+
+
+		ADT_TwoList* twoListTest = new ADT_TwoList(vloz, vyber, ukaz, csvName);
+		(*twoListTest).do_testing();
+		delete twoListTest;
+	}
+	
+
+	for (int i = 1; i <= 2; i++) {
+		std::string csvName;
+		int choice;
+
+		switch (2)
+		{
+		case 1:
+			csvName = "ScenarioA.csv";
+			choice = 1;
+			break;
+		case 2:
+			csvName = "ScenarioB.csv";
+			choice = 2;
+			break;
+		default:
+			csvName = "ScenarioA.csv";
+			choice = 1;
+			break;
+		}
+
+		ADT_Matrix* matrixTest = new ADT_Matrix(choice, csvName);
+		(*matrixTest).do_testing();
+		delete matrixTest;
+	}
+
+	for (int i = 1; i <= 2; i++) {
+		std::string csvName;
+		int vloz, zrus, LogOp, SetOp;
+
+		switch (i)
+		{
+		case 1:
+			csvName = "ScenarioA.csv";
+			vloz = 20;
+			zrus = 20;
+			LogOp = 50;
+			SetOp = 10;
+			break;
+		case 2:
+			csvName = "ScenarioB.csv";
+			vloz = 35;
+			zrus = 35;
+			LogOp = 20;
+			SetOp = 10;
+			break;
+		}
+
+		ADT_BitMap* bitMapTest = new ADT_BitMap(vloz, zrus, LogOp, SetOp, csvName);
+		(*bitMapTest).do_testing();
+		delete bitMapTest;
+	}
+}
+
 void Test::createScenario(int type)
 {
 	int size_ = 0;

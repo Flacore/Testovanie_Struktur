@@ -11,8 +11,7 @@
 #define MIN_VALUE 1
 #define MAX_VALUE 10
 #define MIN_SIZE 1
-#define MAX_SIZE 20
-//#define MAX_SIZE 2000
+#define MAX_SIZE 2000
 #define FILE "vysledky/uloha3/"
 
 namespace std {
@@ -67,27 +66,31 @@ namespace std {
 	inline void ADT_Matrix::do_testing()
 	{
 		for (int k = 1; k <= 2; k++) {
-			for (i = MIN_SIZE; i <= MAX_SIZE; i++) {
+			for (int j = MIN_SIZE; j <= MAX_SIZE; j++) {
 				int m, n;
 				if (k == 1) {
-					m = i;
-					n = 1;
+					m = j;
+					n = MIN_SIZE;
 				}
 				else {
-					m = 1;
-					n = i;
+					m = MIN_SIZE;
+					n = j;
 				}
 
 				if (type_ == 1) {
+					scenarioName = "scenarioA.csv";
 					scenarA_nesuvysla(m, n);
 					scenarA_suvysla(m, n);
 				}
 				else {
+					scenarioName = "scenarioB.csv";
 					scenarB_nesuvysla(m, n);
 					scenarB_suvysla(m, n);
 				}
+				i++;
 			}
 		}
+		saveFiles();
 	}
 
 	inline void ADT_Matrix::scenarA_nesuvysla(int m, int n)
@@ -138,14 +141,17 @@ namespace std {
 	{
 		structures::IncoherantMatrix<int>* matica2_ = new structures::IncoherantMatrix<int>(m, n);
 		naplnNesuvysla(m, n, matica2_);
-		structures::IncoherantMatrix<int>* matica1_ = new structures::IncoherantMatrix<int>(m, n);
-		naplnNesuvysla(m, n, matica1_);
+		structures::IncoherantMatrix<int>* matica1_ = new structures::IncoherantMatrix<int>(n, m);
+		naplnNesuvysla(n, m, matica1_);
 		structures::IncoherantMatrix<int>* vysledok_ = new structures::IncoherantMatrix<int>(m, m);
 
 		time_.setStart();
 		for (int x = 0; x < m; x++) {
-			for (int y = 0; y < n; y++) {
-				(*vysledok_)(x, y) = (((*matica1_)(x, y)) * ((*matica1_)(y, x)));
+			for (int y = 0; y < m; y++) {
+				(*vysledok_)(x, y) = 0;
+				for (int k = 0; k < n; k++){
+					(*vysledok_)(x, y) += (((*matica2_)(x, k)) * ((*matica1_)(k, y)));
+				}
 			}
 		}
 		time_.setEnd();
@@ -160,14 +166,17 @@ namespace std {
 	{
 		structures::CoherantMatrix<int>* matica2_ = new structures::CoherantMatrix<int>(m, n);
 		naplnSuvysla(m, n, matica2_);
-		structures::CoherantMatrix<int>* matica1_ = new structures::CoherantMatrix<int>(m, n);
-		naplnSuvysla(m, n, matica1_);
+		structures::CoherantMatrix<int>* matica1_ = new structures::CoherantMatrix<int>(n, m);
+		naplnSuvysla(n, m, matica1_);
 		structures::CoherantMatrix<int>* vysledok_ = new structures::CoherantMatrix<int>(m, m);
 
 		time_.setStart();
 		for (int x = 0; x < m; x++) {
-			for (int y = 0; y < n; y++) {
-				(*vysledok_)(x, y) = (((*matica1_)(x, y)) * ((*matica1_)(y, x)));
+			for (int y = 0; y < m; y++) {
+				(*vysledok_)(x, y) = 0;
+				for (int k = 0; k < n; k++) {
+					(*vysledok_)(x, y) += (((*matica2_)(x, k)) * ((*matica1_)(k, y)));
+				}
 			}
 		}
 		time_.setEnd();
@@ -209,12 +218,12 @@ namespace std {
 
 			//Min Size -> Max Size
 			if (n < (MAX_SIZE-MIN_SIZE+1)) {
-				M = 1;
+				M = MIN_SIZE;
 				N = (n + MIN_SIZE);
 			}
 			else {
 				M = (n + MIN_SIZE) - MAX_SIZE;
-				N = 1;
+				N = MIN_SIZE;
 			}
 
 			file_->addItem(to_string(n + 1));
@@ -230,8 +239,6 @@ namespace std {
 				file_->newLine();
 			}
 		}
-
-		std::string name = FILE;
 
 		file_->saveFile();
 		delete file_;

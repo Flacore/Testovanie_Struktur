@@ -26,6 +26,8 @@ public:
 
 	void uloha6();
 
+	void autoTesting();
+
 private:
 	KeyPressed key_;
 

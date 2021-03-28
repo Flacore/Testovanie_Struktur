@@ -59,11 +59,11 @@ namespace std {
 			max_ = max;
 			ByteMap = new structures::Array<BitSet*>(size_);
 			int i_min = min_;
-			int i_max = min_ + size_;
+			int i_max = min_ + (sizeof(T) * 8);
 			for (int i = 0; i < size_; i++) {
 				(*ByteMap)[i] = new BitSet(i_min, i_max);
 				i_min = i_max + 1;
-				i_max += (size_ + 1);
+				i_max += ((sizeof(T) * 8) + 1);
 			}
 		}
 
@@ -292,16 +292,18 @@ namespace std {
 			if (item <= max_ && item >= min_) {
 				int index = 0;
 				int i_min = min_;
-				int i_max = min_ + size_;
+				int i_max = min_ + (sizeof(T) * 8);
 				for (int i = 0; i < size_; i++) {
-					i_min = i_max + 1;
-					i_max += (size_ + 1);
 					if (i_min <= item && i_max >= item) {
-						index = i+1;
+						index = i;
 						break;
 					}
+					i_min = i_max + 1;
+					i_max = i_min + (sizeof(T) * 8) - 1;
 				}
-				(*(*ByteMap)[index]).insert(item);
+				int size_ = ByteMap->size();
+				size_ = ByteMap->size();
+				(*ByteMap)[index]->insert(item);
 			}
 		}
 
@@ -311,14 +313,14 @@ namespace std {
 			if (item <= max_ && item >= min_) {
 				int index = 0;
 				int i_min = min_;
-				int i_max = min_ + size_;
+				int i_max = min_ + (sizeof(T) * 8);
 				for (int i = 0; i < size_; i++) {
-					i_min = i_max + 1;
-					i_max += (size_ + 1);
 					if (i_min <= item && i_max >= item) {
-						index = i + 1;
+						index = i;
 						break;
 					}
+					i_min = i_max + 1;
+					i_max = i_min + (sizeof(T) * 8) - 1;
 				}
 				(*(*ByteMap)[index]).remove(item);
 			}
@@ -330,14 +332,14 @@ namespace std {
 			if (item <= max_ && item >= min_) {
 				int index = 0;
 				int i_min = min_;
-				int i_max = min_ + size_;
+				int i_max = min_ + (sizeof(T) * 8);
 				for (int i = 0; i < size_; i++) {
-					i_min = i_max + 1;
-					i_max += (size_ + 1);
 					if (i_min <= item && i_max >= item) {
 						index = i;
 						break;
 					}
+					i_min = i_max + 1;
+					i_max = i_min + (sizeof(T) * 8) - 1;
 				}
 				return (*(*ByteMap)[index]).isIn(item);
 			}

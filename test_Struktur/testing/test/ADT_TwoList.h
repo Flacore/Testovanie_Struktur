@@ -3,8 +3,7 @@
 
 #include <string>
 
-#define POCET_OPERACII 100
-//#define POCET_OPERACII 100000
+#define POCET_OPERACII 100000
 #define FILE "vysledky/uloha5/"
 
 namespace std {

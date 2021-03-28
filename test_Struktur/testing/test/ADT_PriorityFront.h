@@ -6,8 +6,7 @@
 
 #include "../time.h";
 
-#define POCET_OPERACII 100
-//#define POCET_OPERACII 100000
+#define POCET_OPERACII 100000
 #define FILE "vysledky/uloha2/"
 
 namespace std {
@@ -124,7 +123,7 @@ namespace std {
 
 	inline void ADT_PriorityFront::oGet()
 	{
-		if (POCET_OPERACII * (double(vyber_ - vloz_) / 100) > count_g) {
+		if (POCET_OPERACII * (double(vyber_ - vloz_) / 100) > count_g && count_i > 0) {
 			int trashbin_ = 0;
 
 			time_.setStart();
@@ -150,7 +149,7 @@ namespace std {
 
 	inline void ADT_PriorityFront::oShow()
 	{
-		if (POCET_OPERACII * (double(ukaz_ - vyber_) / 100) > count_s) {
+		if (POCET_OPERACII * (double(ukaz_ - vyber_) / 100) > count_s && count_i > 0) {
 			int trashbin_ = 0;
 
 			time_.setStart();

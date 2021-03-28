@@ -17,7 +17,7 @@
 
 #define EXIT_VALUE 0
 #define FIRST_TASK_VALUE 1
-#define NUM_OF_TASKS 4
+#define NUM_OF_TASKS 5
 #define NUM_OF_SUBTASKS 3
 
 using namespace std;
@@ -85,6 +85,9 @@ private:
 					break;
 				}
 			break;
+		case 5:
+			test.autoTesting();
+			break;
 		default:
 			cout << "Ops, something went wrong!" << endl;
 			break;
@@ -97,6 +100,7 @@ private:
 		cout << "  2.ADT_priorityQueue testing." << endl;
 		cout << "  3.ADT_Matrix testing" << endl;
 		cout << "  4.Others test" << endl;
+		cout << "  5.Automatic full testing" << endl;
 		cout << "  0.Exit" << endl;
 	}
 

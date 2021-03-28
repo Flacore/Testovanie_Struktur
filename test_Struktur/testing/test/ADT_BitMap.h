@@ -14,10 +14,10 @@
 #include "../../structures/bit_map/array_bit_map.h";
 
 #define MIN_VALUE 1
-#define MAX_VALUE 10000
+#define MAX_VALUE 100
 #define MIN_SIZE 10
 #define MAX_SIZE 100000
-#define POCET_OPERACII 100
+#define POCET_OPERACII 30
 //#define POCET_OPERACII 100000
 #define FILE "vysledky/uloha6/"
 
@@ -130,15 +130,15 @@ namespace std {
 			time_.setStart();
 			shorter_->remove(value);
 			time_.setEnd();
-			(cas_operacie_Shorter)[i] = time_.getDuration();
+			(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 			time_.setStart();
 			longer_->remove(value);
 			time_.setEnd();
-			(cas_operacie_Longer)[i] = time_.getDuration();
+			(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 
-			(nazov_operacie_)[i] = "1. Odstranovanie.";
+			(nazov_operacie_)[count_1 + count_2 + count_3 + count_4] = "1. Odstranovanie.";
 
 			recal = 0;
 			count_1++;
@@ -158,14 +158,14 @@ namespace std {
 			time_.setStart();
 			shorter_->insert(value);
 			time_.setEnd();
-			(cas_operacie_Shorter)[i] = time_.getDuration();
+			(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 			time_.setStart();
 			longer_->insert(value);
 			time_.setEnd();
-			(cas_operacie_Longer)[i] = time_.getDuration();
+			(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
-			(nazov_operacie_)[i] = "2. Vkladanie.";
+			(nazov_operacie_)[count_1 + count_2 + count_3 + count_4] = "2. Vkladanie.";
 
 			count_2++;
 			recal = 0;
@@ -189,40 +189,40 @@ namespace std {
 				time_.setStart();
 				tmp = shorter_->isIn(value);
 				time_.setEnd();
-				(cas_operacie_Shorter)[i] = time_.getDuration();
+				(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 				time_.setStart();
 				tmp = longer_->isIn(value);
 				time_.setEnd();
-				(cas_operacie_Longer)[i] = time_.getDuration();
+				(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
-				(nazov_operacie_)[i] = "3. Patri.";
+				(nazov_operacie_)[count_1 + count_2 + count_3 + count_4] = "3. Patri.";
 			}
 			if (choose == 2) {
 				time_.setStart();
 				tmp = (shorter_ == shorter_);
 				time_.setEnd();
-				(cas_operacie_Shorter)[i] = time_.getDuration();
+				(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 				time_.setStart();
 				tmp = (longer_ == longer_);
 				time_.setEnd();
-				(cas_operacie_Longer)[i] = time_.getDuration();
+				(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
-				(nazov_operacie_)[i] = "3. Je rovna.";
+				(nazov_operacie_)[count_1 + count_2 + count_3 + count_4] = "3. Je rovna.";
 			}
 			if (choose == 3) {
 				time_.setStart();
-				tmp = shorter_->isSubset(*shorter_);
+				//tmp = shorter_->isSubset(*shorter_);
 				time_.setEnd();
-				(cas_operacie_Shorter)[i] = time_.getDuration();
+				(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 				time_.setStart();
-				tmp = longer_->isSubset(*longer_);
+				//tmp = longer_->isSubset(*longer_);
 				time_.setEnd();
-				(cas_operacie_Longer)[i] = time_.getDuration();
+				(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
-				(nazov_operacie_)[i] = "3. Je podmnozina.";
+				(nazov_operacie_)[count_1 + count_2 + count_3 + count_4] = "3. Je podmnozina.";
 			}
 
 			count_3++;
@@ -243,40 +243,40 @@ namespace std {
 				time_.setStart();
 				shorter_->setUnion(*shorter_);
 				time_.setEnd();
-				(cas_operacie_Shorter)[i] = time_.getDuration();
+				(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 				time_.setStart();
 				longer_->setUnion(*longer_);
 				time_.setEnd();
-				(cas_operacie_Longer)[i] = time_.getDuration();
+				(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
-				(nazov_operacie_)[i] = "4. Zjednotenie.";
+				(nazov_operacie_)[count_1 + count_2 + count_3 + count_4] = "4. Zjednotenie.";
 			}
 			if (choose == 2) {
 				time_.setStart();
 				shorter_->intersection(*shorter_);
 				time_.setEnd();
-				(cas_operacie_Shorter)[i] = time_.getDuration();
+				(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 				time_.setStart();
 				longer_->intersection(*longer_);
 				time_.setEnd();
-				(cas_operacie_Longer)[i] = time_.getDuration();
+				(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
-				(nazov_operacie_)[i] = "4. Prienik.";
+				(nazov_operacie_)[count_1 + count_2 + count_3 + count_4] = "4. Prienik.";
 			}
 			if (choose == 3) {
 				time_.setStart();
 				shorter_->difference(*shorter_);
 				time_.setEnd();
-				(cas_operacie_Shorter)[i] = time_.getDuration();
+				(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 				time_.setStart();
 				longer_->difference(*longer_);
 				time_.setEnd();
-				(cas_operacie_Longer)[i] = time_.getDuration();
+				(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
-				(nazov_operacie_)[i] = "4. Rozdiel.";
+				(nazov_operacie_)[count_1 + count_2 + count_3 + count_4] = "4. Rozdiel.";
 			}
 
 			count_4++;
@@ -298,11 +298,11 @@ namespace std {
 		for (int n = 0; n < POCET_OPERACII; n++) {
 			file_->addItem(to_string(n + 1));
 			file_->addComma();
-			file_->addItem((nazov_operacie_)[n]);
+			file_->addItem(nazov_operacie_[n]);
 			file_->addComma();
-			file_->addItem(to_string((cas_operacie_Longer)[n]));
+			file_->addItem(to_string(cas_operacie_Longer[n]));
 			file_->addComma();
-			file_->addItem(to_string((cas_operacie_Shorter)[n]));
+			file_->addItem(to_string(cas_operacie_Shorter[n]));
 			if (n < POCET_OPERACII - 1) {
 				file_->newLine();
 			}

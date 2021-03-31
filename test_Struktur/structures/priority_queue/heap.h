@@ -116,22 +116,27 @@ namespace structures
 	T Heap<T>::pop()
 	{
 		int index = indexOfPeek();
-		PriorityQueueItem<T>* bestItem = (*PriorityQueueList<T>::list_)[index];
-		(*PriorityQueueList<T>::list_)[index] = (*PriorityQueueList<T>::list_)[PriorityQueueList<T>::list_->size() - 1];
-		(*PriorityQueueList<T>::list_)[PriorityQueueList<T>::list_->size() - 1] = bestItem;
-		PriorityQueueList<T>::list_->removeAt(PriorityQueueList<T>::list_->size() - 1);
+		if (index > -1) {
+			PriorityQueueItem<T>* bestItem = (*PriorityQueueList<T>::list_)[index];
+			(*PriorityQueueList<T>::list_)[index] = (*PriorityQueueList<T>::list_)[PriorityQueueList<T>::list_->size() - 1];
+			(*PriorityQueueList<T>::list_)[PriorityQueueList<T>::list_->size() - 1] = bestItem;
+			PriorityQueueList<T>::list_->removeAt(PriorityQueueList<T>::list_->size() - 1);
 
-		int indexCurrent = 0;
-		int indexSon = getGreaterSonIndex(indexCurrent);
-		while (indexSon != -1 && (*PriorityQueueList<T>::list_)[indexCurrent]->getPriority() > (*PriorityQueueList<T>::list_)[indexSon]->getPriority()) {
-			DSRoutines::swap<PriorityQueueItem<T>*>((*PriorityQueueList<T>::list_)[indexSon], ((*PriorityQueueList<T>::list_)[indexCurrent]));
+			int indexCurrent = 0;
+			int indexSon = getGreaterSonIndex(indexCurrent);
+			while (indexSon != -1 && (*PriorityQueueList<T>::list_)[indexCurrent]->getPriority() > (*PriorityQueueList<T>::list_)[indexSon]->getPriority()) {
+				DSRoutines::swap<PriorityQueueItem<T>*>((*PriorityQueueList<T>::list_)[indexSon], ((*PriorityQueueList<T>::list_)[indexCurrent]));
 				indexCurrent = indexSon;
-			indexSon = getGreaterSonIndex(indexCurrent);
-		}
+				indexSon = getGreaterSonIndex(indexCurrent);
+			}
 
-		T result = bestItem->accessData();
-		delete bestItem;
-		return result;
+			T result = bestItem->accessData();
+			delete bestItem;
+			return result;
+		}
+		else {
+			return 0;
+		}
 	}
 
 	template<typename T>
@@ -164,7 +169,8 @@ namespace structures
 	inline int Heap<T>::indexOfPeek() const
 	{
 		if (PriorityQueueList<T>::list_->isEmpty()) {
-			throw std::logic_error("Heap is empty");
+			//throw std::logic_error("Heap is empty");
+			return -1;
 		}
 
 		return 0;

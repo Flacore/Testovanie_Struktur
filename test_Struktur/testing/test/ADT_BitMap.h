@@ -17,7 +17,7 @@
 #define MAX_VALUE 100
 #define MIN_SIZE 10
 #define MAX_SIZE 100000
-#define POCET_OPERACII 30
+#define POCET_OPERACII 10000
 //#define POCET_OPERACII 100000
 #define FILE "vysledky/uloha6/"
 
@@ -128,12 +128,12 @@ namespace std {
 		if (POCET_OPERACII * ((double(zrus_) / 100)) > count_1) {
 
 			time_.setStart();
-			shorter_->remove(value);
+			//shorter_->remove(value);
 			time_.setEnd();
 			(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 			time_.setStart();
-			longer_->remove(value);
+			//longer_->remove(value);
 			time_.setEnd();
 			(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
@@ -156,12 +156,12 @@ namespace std {
 		if (POCET_OPERACII * (double(vloz_ - zrus_) / 100) > count_2 || recal > 5) {
 
 			time_.setStart();
-			shorter_->insert(value);
+			//shorter_->insert(value);
 			time_.setEnd();
 			(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 			time_.setStart();
-			longer_->insert(value);
+			//longer_->insert(value);
 			time_.setEnd();
 			(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
@@ -180,19 +180,19 @@ namespace std {
 	{
 		bool tmp;
 
-		if (POCET_OPERACII * (double(LogOperacie_ - vloz_ - zrus_) / 100) > count_3) {
+		if (POCET_OPERACII * (double(LogOperacie_ - vloz_) / 100) > count_3) {
 			int choose = (rand() % 3) + 1;
 
 			if (choose == 1) {
 				int value = (rand() % MAX_VALUE) + MIN_VALUE;
 
 				time_.setStart();
-				tmp = shorter_->isIn(value);
+				//tmp = shorter_->isIn(value);
 				time_.setEnd();
 				(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 				time_.setStart();
-				tmp = longer_->isIn(value);
+			//	tmp = longer_->isIn(value);
 				time_.setEnd();
 				(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
@@ -236,17 +236,17 @@ namespace std {
 
 	inline void ADT_BitMap::SetOp()
 	{
-		if (POCET_OPERACII * (double(MnozOperacie_ - LogOperacie_ - vloz_ - zrus_) / 100) > count_4) {
+		if (POCET_OPERACII * (double(MnozOperacie_ - LogOperacie_ ) / 100) > count_4) {
 			int choose = (rand() % 3) + 1;
 
 			if (choose == 1 ) {
 				time_.setStart();
-				shorter_->setUnion(*shorter_);
+				//shorter_->setUnion(*shorter_);
 				time_.setEnd();
 				(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 				time_.setStart();
-				longer_->setUnion(*longer_);
+				//longer_->setUnion(*longer_);
 				time_.setEnd();
 				(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
@@ -254,12 +254,12 @@ namespace std {
 			}
 			if (choose == 2) {
 				time_.setStart();
-				shorter_->intersection(*shorter_);
+				//shorter_->intersection(*shorter_);
 				time_.setEnd();
 				(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 				time_.setStart();
-				longer_->intersection(*longer_);
+				//longer_->intersection(*longer_);
 				time_.setEnd();
 				(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
@@ -267,12 +267,12 @@ namespace std {
 			}
 			if (choose == 3) {
 				time_.setStart();
-				shorter_->difference(*shorter_);
+				//shorter_->difference(*shorter_);
 				time_.setEnd();
 				(cas_operacie_Shorter)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 
 				time_.setStart();
-				longer_->difference(*longer_);
+				//longer_->difference(*longer_);
 				time_.setEnd();
 				(cas_operacie_Longer)[count_1 + count_2 + count_3 + count_4] = time_.getDuration();
 

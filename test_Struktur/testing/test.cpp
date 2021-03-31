@@ -368,6 +368,7 @@ void Test::uloha6()
 
 void Test::autoTesting()
 {
+	/*
 	for (int i = 1; i <= 3; i++) {
 
 		std::string csvName;
@@ -407,6 +408,8 @@ void Test::autoTesting()
 		(*twolistTest).start_testing();
 		delete twolistTest;
 	}
+	*/
+
 
 	for (int i = 1; i <= 3; i++) {
 
@@ -444,7 +447,8 @@ void Test::autoTesting()
 		(*twoListTest).do_testing();
 		delete twoListTest;
 	}
-	
+
+
 
 	for (int i = 1; i <= 2; i++) {
 		std::string csvName;
@@ -470,7 +474,10 @@ void Test::autoTesting()
 		(*matrixTest).do_testing();
 		delete matrixTest;
 	}
+	
 
+	//TODO
+	/*
 	for (int i = 1; i <= 2; i++) {
 		std::string csvName;
 		int vloz, zrus, LogOp, SetOp;
@@ -497,6 +504,7 @@ void Test::autoTesting()
 		(*bitMapTest).do_testing();
 		delete bitMapTest;
 	}
+	*/
 }
 
 void Test::createScenario(int type)

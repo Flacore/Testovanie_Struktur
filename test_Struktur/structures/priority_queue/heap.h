@@ -101,61 +101,72 @@ namespace structures
 	template<typename T>
 	void Heap<T>::push(const int priority, const T& data)
 	{
-		PriorityQueueItem<T>* item = new PriorityQueueItem<T>(priority, data);
-		PriorityQueueList<T>::list_->add(item);
-		int index = PriorityQueueList<T>::list_->size() - 1;
-		int parentIndex = this->getParentIndex(index);
-		while (index > 0 && (*PriorityQueueList<T>::list_)[index]->getPriority() < (*PriorityQueueList<T>::list_)[parentIndex]->getPriority()) {
-			DSRoutines::swap<PriorityQueueItem<T>*>((*PriorityQueueList<T>::list_)[index], ((*PriorityQueueList<T>::list_)[parentIndex]));
-			index = parentIndex;
-			parentIndex = this->getParentIndex(index);
+		PriorityQueueList<T>::list_->add(new PriorityQueueItem<T>(priority, data));
+
+		int indexCurrent = PriorityQueueList<T>::list_->size() - 1;
+		int indexParent = getParentIndex(indexCurrent);
+		while (indexCurrent > 0  && (*PriorityQueueList<T>::list_)[indexCurrent]->getPriority() < (*PriorityQueueList<T>::list_)[indexParent]->getPriority()) {
+			DSRoutines::swap<PriorityQueueItem<T>*>((*PriorityQueueList<T>::list_)[indexParent], ((*PriorityQueueList<T>::list_)[indexCurrent]));
+			indexCurrent = indexParent;
+			indexParent = getParentIndex(indexCurrent);
 		}
 	}
 
 	template<typename T>
 	T Heap<T>::pop()
 	{
-		PriorityQueueItem<T>* item = (*PriorityQueueList<T>::list_)[0];
-		(*PriorityQueueList<T>::list_)[0] = PriorityQueueList<T>::list_->removeAt(PriorityQueueList<T>::list_->size() - 1);
-		int index = 0;
-		int sonIndex = this->getGreaterSonIndex(index);
-		while (
-			sonIndex < PriorityQueueList<T>::list_->size() &&
-			((*PriorityQueueList<T>::list_)[index]->getPriority() > (*PriorityQueueList<T>::list_)[sonIndex]->getPriority())
-			)
-		{
-			DSRoutines::swap<PriorityQueueItem<T>*>((*PriorityQueueList<T>::list_)[index], ((*PriorityQueueList<T>::list_)[sonIndex]));
-			index = sonIndex;
-			sonIndex = this->getGreaterSonIndex(index);
+		int index = indexOfPeek();
+		PriorityQueueItem<T>* bestItem = (*PriorityQueueList<T>::list_)[index];
+		(*PriorityQueueList<T>::list_)[index] = (*PriorityQueueList<T>::list_)[PriorityQueueList<T>::list_->size() - 1];
+		(*PriorityQueueList<T>::list_)[PriorityQueueList<T>::list_->size() - 1] = bestItem;
+		PriorityQueueList<T>::list_->removeAt(PriorityQueueList<T>::list_->size() - 1);
+
+		int indexCurrent = 0;
+		int indexSon = getGreaterSonIndex(indexCurrent);
+		while (indexSon != -1 && (*PriorityQueueList<T>::list_)[indexCurrent]->getPriority() > (*PriorityQueueList<T>::list_)[indexSon]->getPriority()) {
+			DSRoutines::swap<PriorityQueueItem<T>*>((*PriorityQueueList<T>::list_)[indexSon], ((*PriorityQueueList<T>::list_)[indexCurrent]));
+				indexCurrent = indexSon;
+			indexSon = getGreaterSonIndex(indexCurrent);
 		}
-		item = (*PriorityQueueList<T>::list_)[index];
-		return (*item).accessData();
+
+		T result = bestItem->accessData();
+		delete bestItem;
+		return result;
 	}
 
 	template<typename T>
 	inline int Heap<T>::getParentIndex(const int index)
 	{
-		return (index - 1) / 2;
+		return (index + 1) / 2 - 1;
 	}
 
 	template<typename T>
 	inline int Heap<T>::getGreaterSonIndex(const int index)
 	{
-		int rightSonIndex = (2 * index) + 2;
-		int leftSonIndex = (2 * index) + 1;
-		if (rightSonIndex >leftSonIndex) {
-			return rightSonIndex;
-		} else {
-			return leftSonIndex;
-		}
+		int indexLeft = index * 2 + 1;
+		int indexRight = index * 2 + 2;
 
+		PriorityQueueItem<T>* sonLeft = indexLeft < PriorityQueueList<T>::list_->size() ? (*PriorityQueueList<T>::list_)[indexLeft] : nullptr;
+		PriorityQueueItem<T>* sonRight = indexRight < PriorityQueueList<T>::list_->size() ? (*PriorityQueueList<T>::list_)[indexRight] : nullptr;
+
+		if (sonLeft == nullptr && sonRight == nullptr) {
+			return -1;
+		}
+		if (sonLeft != nullptr && sonRight != nullptr) {
+			return sonLeft->getPriority() < sonRight->getPriority() ? indexLeft : indexRight;
+		}
+		else{
+			return indexLeft;
+		}
 	}
 
 	template<typename T>
 	inline int Heap<T>::indexOfPeek() const
 	{
-		if(this->size() <= 0)
-			throw std::logic_error("Heap is empty.");
+		if (PriorityQueueList<T>::list_->isEmpty()) {
+			throw std::logic_error("Heap is empty");
+		}
+
 		return 0;
 	}
 }

@@ -8,9 +8,10 @@ namespace std {
 	public:
 		BitSet(const int min, const int max) :
 			min_(min),
-			max_(max),
-			BitMap(new structures::Array<int>((max - min) + 1))
-		{}
+			max_(max)
+		{
+			BitMap = new structures::Array<int>((max - min) + 1);
+		}
 
 		~BitSet() {
 			delete BitMap;
@@ -122,11 +123,13 @@ namespace std {
 	{
 		if (item >= min_ || item <= max_) {
 			int index = item - min_;
-			if ((*BitMap)[index] == 1) {
-				return true;
-			}
-			else {
-				return false;
+			if (BitMap != nullptr) {
+				if ((*BitMap)[index] == 1) {
+					return true;
+				}
+				else {
+					return false;
+				}
 			}
 		}
 		return false;
@@ -149,7 +152,7 @@ namespace std {
 	{
 		if (other.max_ >= max_ && other.min_ <= min_) {
 			for (int i = 0; i <= (max_ - min_); i++) {
-				if (!(BitMap[i] == other.BitMap[i] && other.BitMap[i] == 1)) {
+				if (!(BitMap[i] == other.BitMap[i]) && BitMap[i] == 1) {
 					return false;
 				}
 			}
@@ -341,7 +344,9 @@ namespace std {
 					i_min = i_max + 1;
 					i_max = i_min + (sizeof(T) * 8) - 1;
 				}
-				return (*(*ByteMap)[index]).isIn(item);
+				if ((*(*ByteMap)[index]).isIn(item)) {
+					return true;
+				}
 			}
 			return false;
 		}
@@ -351,7 +356,7 @@ namespace std {
 		{
 			if (other.max_ == max_ && other.min_ == min_) {
 				if (other.sizeOfTypename() == sizeOfTypename()) {
-					for (int i = 0; i <= (max_ - min_); i++) {
+					for (int i = 0; i < (size_); i++) {
 						if (!((*ByteMap)[i] == (*other.ByteMap)[i])) {
 							return false;
 						}
@@ -365,10 +370,10 @@ namespace std {
 		template<typename T>
 		inline bool ByteSet<T>::isSubset(ByteSet<T> other)
 		{
-			if (other.max_ >= max_ && other.min_ <= min_) {
-				if (other.sizeOfTypename() >= sizeOfTypename()) {
-					for (int i = 0; i <= (max_ - min_); i++) {
-						if (!( (*(*ByteMap)[i]).isSubset((*(*other.ByteMap)[i])) )) {
+			if ((*other).max_ >= max_ && (*other).min_ <= min_) {
+				if ((*other).sizeOfTypename() >= sizeOfTypename()) {
+					for (int i = 0; i < (size_); i++) {
+						if (!( (*(*ByteMap)[i]).isSubset((*(*(*other).ByteMap)[i])) )) {
 							return false;
 						}
 					}

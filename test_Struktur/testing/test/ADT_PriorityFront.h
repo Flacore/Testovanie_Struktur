@@ -6,7 +6,7 @@
 
 #include "../time.h";
 
-#define POCET_OPERACII 100000
+#define POCET_OPERACII 1000
 #define FILE "vysledky/uloha2/"
 
 namespace std {
@@ -101,7 +101,7 @@ namespace std {
 			int value = 0;
 
 			time_.setStart();
-			heap_->push(priority, value);
+			//heap_->push(priority, value);
 			time_.setEnd();
 			(cas_operacie_Heap)[i] = time_.getDuration();
 
@@ -127,7 +127,7 @@ namespace std {
 			int trashbin_ = 0;
 
 			time_.setStart();
-			trashbin_ = heap_->pop();
+			//trashbin_ = heap_->pop();
 			time_.setEnd();
 			(cas_operacie_Heap)[i] = time_.getDuration();
 
@@ -153,7 +153,7 @@ namespace std {
 			int trashbin_ = 0;
 
 			time_.setStart();
-			trashbin_ = heap_->peek();
+			//trashbin_ = heap_->peek();
 			time_.setEnd();
 			(cas_operacie_Heap)[i] = time_.getDuration();
 

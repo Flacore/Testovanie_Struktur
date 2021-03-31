@@ -77,6 +77,8 @@ namespace std {
 					n = j;
 				}
 
+				cout << m << " " << n << endl;
+
 				if (type_ == 1) {
 					scenarioName = "scenarioA.csv";
 					scenarA_nesuvysla(m, n);
@@ -90,6 +92,7 @@ namespace std {
 				i++;
 			}
 		}
+		cout << "Ukladanie" << endl;
 		saveFiles();
 	}
 

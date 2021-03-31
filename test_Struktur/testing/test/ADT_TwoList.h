@@ -3,7 +3,7 @@
 
 #include <string>
 
-#define POCET_OPERACII 100000
+#define POCET_OPERACII 1000
 #define FILE "vysledky/uloha5/"
 
 namespace std {
@@ -84,8 +84,6 @@ namespace std {
 
 		for (i = 0; i < POCET_OPERACII; i++) {
 			choice = (rand() % 100) + 0;
-
-			cout << i << endl;
 
 			if (choice <= vloz_ || recap > 5) {
 				choice = 1;

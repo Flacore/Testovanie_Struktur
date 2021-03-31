@@ -1,0 +1,1001 @@
+n,Nazov Operacie,Cas Longer,Cas Shorter
+1,2. Vkladanie.,100,7
+2,2. Vkladanie.,76,3
+3,1. Odstranovanie.,75,15
+4,1. Odstranovanie.,52,5
+5,2. Vkladanie.,107,9
+6,2. Vkladanie.,139,9
+7,2. Vkladanie.,39,4
+8,1. Odstranovanie.,75,4
+9,2. Vkladanie.,75,7
+10,2. Vkladanie.,39,4
+11,1. Odstranovanie.,89,7
+12,2. Vkladanie.,39,3
+13,1. Odstranovanie.,76,7
+14,1. Odstranovanie.,38,3
+15,2. Vkladanie.,75,7
+16,2. Vkladanie.,39,4
+17,1. Odstranovanie.,39,3
+18,1. Odstranovanie.,38,19
+19,1. Odstranovanie.,76,13
+20,1. Odstranovanie.,74,3
+21,2. Vkladanie.,76,4
+22,1. Odstranovanie.,76,3
+23,2. Vkladanie.,242,27
+24,2. Vkladanie.,202,5
+25,2. Vkladanie.,76,4
+26,2. Vkladanie.,75,7
+27,2. Vkladanie.,74,7
+28,1. Odstranovanie.,89,3
+29,2. Vkladanie.,40,4
+30,1. Odstranovanie.,75,3
+31,2. Vkladanie.,39,3
+32,2. Vkladanie.,75,3
+33,1. Odstranovanie.,38,3
+34,1. Odstranovanie.,39,3
+35,2. Vkladanie.,76,7
+36,1. Odstranovanie.,36,91
+37,2. Vkladanie.,445,6
+38,1. Odstranovanie.,30,3
+39,2. Vkladanie.,58,3
+40,2. Vkladanie.,34,2
+41,1. Odstranovanie.,56,6
+42,2. Vkladanie.,70,3
+43,1. Odstranovanie.,63,5
+44,2. Vkladanie.,62,3
+45,1. Odstranovanie.,37,3
+46,1. Odstranovanie.,85,4
+47,1. Odstranovanie.,61,5
+48,2. Vkladanie.,61,3
+49,1. Odstranovanie.,79,6
+50,1. Odstranovanie.,42,30
+51,1. Odstranovanie.,148,4
+52,1. Odstranovanie.,39,7
+53,2. Vkladanie.,62,5
+54,1. Odstranovanie.,31,3
+55,2. Vkladanie.,1144,4
+56,2. Vkladanie.,245,317
+57,2. Vkladanie.,63,3
+58,1. Odstranovanie.,66,3
+59,2. Vkladanie.,67,4
+60,2. Vkladanie.,66,9
+61,2. Vkladanie.,59,5
+62,1. Odstranovanie.,31,3
+63,1. Odstranovanie.,64,3
+64,2. Vkladanie.,31,3
+65,2. Vkladanie.,32,3
+66,2. Vkladanie.,68,6
+67,1. Odstranovanie.,72,3
+68,1. Odstranovanie.,33,4
+69,1. Odstranovanie.,366,3
+70,1. Odstranovanie.,77,8
+71,1. Odstranovanie.,39,3
+72,1. Odstranovanie.,40,3
+73,2. Vkladanie.,77,4
+74,1. Odstranovanie.,77,3
+75,1. Odstranovanie.,73,3
+76,2. Vkladanie.,39,3
+77,2. Vkladanie.,78,7
+78,2. Vkladanie.,40,4
+79,2. Vkladanie.,40,4
+80,1. Odstranovanie.,39,3
+81,1. Odstranovanie.,81,3
+82,2. Vkladanie.,38,4
+83,1. Odstranovanie.,75,3
+84,1. Odstranovanie.,75,3
+85,1. Odstranovanie.,37,3
+86,1. Odstranovanie.,39,3
+87,1. Odstranovanie.,38,3
+88,2. Vkladanie.,39,3
+89,1. Odstranovanie.,75,7
+90,1. Odstranovanie.,75,7
+91,1. Odstranovanie.,75,7
+92,1. Odstranovanie.,75,7
+93,1. Odstranovanie.,76,3
+94,1. Odstranovanie.,75,4
+95,1. Odstranovanie.,75,3
+96,1. Odstranovanie.,75,8
+97,1. Odstranovanie.,73,3
+98,1. Odstranovanie.,39,3
+99,1. Odstranovanie.,39,3
+100,2. Vkladanie.,75,7
+101,1. Odstranovanie.,75,7
+102,2. Vkladanie.,73,7
+103,2. Vkladanie.,75,7
+104,1. Odstranovanie.,75,3
+105,1. Odstranovanie.,75,3
+106,2. Vkladanie.,40,4
+107,2. Vkladanie.,77,3
+108,1. Odstranovanie.,39,3
+109,2. Vkladanie.,74,7
+110,1. Odstranovanie.,80,3
+111,2. Vkladanie.,61,9
+112,2. Vkladanie.,69,3
+113,1. Odstranovanie.,38,3
+114,2. Vkladanie.,75,3
+115,1. Odstranovanie.,30,3
+116,1. Odstranovanie.,54,3
+117,1. Odstranovanie.,29,2
+118,2. Vkladanie.,29,3
+119,1. Odstranovanie.,104,5
+120,1. Odstranovanie.,46,4
+121,2. Vkladanie.,48,2
+122,1. Odstranovanie.,23,2
+123,2. Vkladanie.,63,5
+124,1. Odstranovanie.,25,3
+125,1. Odstranovanie.,44,4
+126,2. Vkladanie.,67,3
+127,1. Odstranovanie.,36,3
+128,2. Vkladanie.,64,7
+129,1. Odstranovanie.,59,14
+130,1. Odstranovanie.,160,6
+131,1. Odstranovanie.,75,3
+132,2. Vkladanie.,75,7
+133,2. Vkladanie.,76,3
+134,1. Odstranovanie.,75,3
+135,2. Vkladanie.,74,8
+136,1. Odstranovanie.,74,3
+137,2. Vkladanie.,39,3
+138,2. Vkladanie.,39,3
+139,1. Odstranovanie.,38,3
+140,1. Odstranovanie.,38,3
+141,2. Vkladanie.,75,3
+142,1. Odstranovanie.,74,7
+143,1. Odstranovanie.,39,4
+144,2. Vkladanie.,75,7
+145,2. Vkladanie.,38,3
+146,2. Vkladanie.,68,8
+147,1. Odstranovanie.,74,5
+148,2. Vkladanie.,75,7
+149,2. Vkladanie.,75,7
+150,2. Vkladanie.,75,4
+151,2. Vkladanie.,30,3
+152,1. Odstranovanie.,71,11
+153,2. Vkladanie.,145,7
+154,2. Vkladanie.,74,7
+155,2. Vkladanie.,84,6
+156,2. Vkladanie.,37,3
+157,2. Vkladanie.,71,3
+158,1. Odstranovanie.,71,3
+159,1. Odstranovanie.,70,3
+160,2. Vkladanie.,34,3
+161,1. Odstranovanie.,74,4
+162,1. Odstranovanie.,39,3
+163,1. Odstranovanie.,36,3
+164,1. Odstranovanie.,98,3
+165,1. Odstranovanie.,2869,111
+166,1. Odstranovanie.,65,7
+167,1. Odstranovanie.,69,3
+168,2. Vkladanie.,62,4
+169,2. Vkladanie.,34,3
+170,1. Odstranovanie.,34,3
+171,2. Vkladanie.,60,3
+172,2. Vkladanie.,31,3
+173,1. Odstranovanie.,31,3
+174,1. Odstranovanie.,66,5
+175,1. Odstranovanie.,40,5
+176,1. Odstranovanie.,78,7
+177,2. Vkladanie.,77,9
+178,1. Odstranovanie.,39,5
+179,2. Vkladanie.,38,3
+180,1. Odstranovanie.,75,3
+181,1. Odstranovanie.,39,3
+182,1. Odstranovanie.,259,7
+183,2. Vkladanie.,131,19
+184,2. Vkladanie.,116,19
+185,2. Vkladanie.,74,11
+186,2. Vkladanie.,29,3
+187,1. Odstranovanie.,59,3
+188,1. Odstranovanie.,178,3
+189,2. Vkladanie.,35,5
+190,2. Vkladanie.,57,2
+191,1. Odstranovanie.,56,5
+192,1. Odstranovanie.,34,3
+193,2. Vkladanie.,58,5
+194,2. Vkladanie.,31,3
+195,2. Vkladanie.,45,3
+196,1. Odstranovanie.,37,3
+197,1. Odstranovanie.,64,3
+198,1. Odstranovanie.,32,3
+199,2. Vkladanie.,100,7
+200,1. Odstranovanie.,65,3
+201,2. Vkladanie.,62,7
+202,1. Odstranovanie.,64,3
+203,2. Vkladanie.,38,4
+204,1. Odstranovanie.,39,3
+205,2. Vkladanie.,39,4
+206,1. Odstranovanie.,63,7
+207,1. Odstranovanie.,70,6
+208,1. Odstranovanie.,71,6
+209,1. Odstranovanie.,75,3
+210,1. Odstranovanie.,38,3
+211,2. Vkladanie.,75,4
+212,1. Odstranovanie.,38,3
+213,2. Vkladanie.,75,7
+214,1. Odstranovanie.,69,7
+215,1. Odstranovanie.,67,6
+216,1. Odstranovanie.,64,3
+217,2. Vkladanie.,65,6
+218,1. Odstranovanie.,37,3
+219,2. Vkladanie.,62,3
+220,2. Vkladanie.,71,3
+221,1. Odstranovanie.,70,6
+222,1. Odstranovanie.,66,3
+223,2. Vkladanie.,65,6
+224,1. Odstranovanie.,63,4
+225,2. Vkladanie.,62,6
+226,2. Vkladanie.,64,3
+227,1. Odstranovanie.,46,3
+228,1. Odstranovanie.,243,7
+229,1. Odstranovanie.,75,3
+230,2. Vkladanie.,76,7
+231,1. Odstranovanie.,75,3
+232,1. Odstranovanie.,75,7
+233,1. Odstranovanie.,74,3
+234,2. Vkladanie.,66,9
+235,2. Vkladanie.,62,14
+236,1. Odstranovanie.,79,10
+237,1. Odstranovanie.,78,4
+238,2. Vkladanie.,40,4
+239,2. Vkladanie.,93,11
+240,1. Odstranovanie.,77,7
+241,1. Odstranovanie.,77,7
+242,2. Vkladanie.,71,7
+243,1. Odstranovanie.,63,6
+244,2. Vkladanie.,65,3
+245,1. Odstranovanie.,30,3
+246,2. Vkladanie.,65,3
+247,2. Vkladanie.,31,3
+248,1. Odstranovanie.,65,3
+249,2. Vkladanie.,39,3
+250,1. Odstranovanie.,75,3
+251,1. Odstranovanie.,39,3
+252,1. Odstranovanie.,71,3
+253,2. Vkladanie.,65,3
+254,2. Vkladanie.,78,6
+255,2. Vkladanie.,67,3
+256,1. Odstranovanie.,75,3
+257,2. Vkladanie.,72,7
+258,1. Odstranovanie.,33,3
+259,1. Odstranovanie.,74,3
+260,1. Odstranovanie.,39,3
+261,2. Vkladanie.,39,3
+262,1. Odstranovanie.,38,3
+263,1. Odstranovanie.,78,3
+264,1. Odstranovanie.,70,3
+265,1. Odstranovanie.,76,3
+266,2. Vkladanie.,39,3
+267,1. Odstranovanie.,75,7
+268,2. Vkladanie.,75,3
+269,2. Vkladanie.,75,3
+270,2. Vkladanie.,75,7
+271,1. Odstranovanie.,36,3
+272,2. Vkladanie.,63,3
+273,2. Vkladanie.,62,6
+274,1. Odstranovanie.,63,5
+275,1. Odstranovanie.,61,3
+276,1. Odstranovanie.,34,3
+277,2. Vkladanie.,66,6
+278,2. Vkladanie.,35,3
+279,2. Vkladanie.,72,3
+280,1. Odstranovanie.,68,3
+281,2. Vkladanie.,72,3
+282,2. Vkladanie.,75,4
+283,2. Vkladanie.,39,3
+284,1. Odstranovanie.,39,3
+285,1. Odstranovanie.,75,7
+286,1. Odstranovanie.,38,3
+287,2. Vkladanie.,75,3
+288,2. Vkladanie.,75,8
+289,2. Vkladanie.,75,3
+290,1. Odstranovanie.,70,3
+291,1. Odstranovanie.,993,3
+292,1. Odstranovanie.,34,4
+293,1. Odstranovanie.,39,4
+294,1. Odstranovanie.,38,3
+295,1. Odstranovanie.,74,13
+296,2. Vkladanie.,32,3
+297,1. Odstranovanie.,75,11
+298,2. Vkladanie.,31,3
+299,2. Vkladanie.,61,6
+300,1. Odstranovanie.,86,6
+301,2. Vkladanie.,181,7
+302,2. Vkladanie.,76,12
+303,2. Vkladanie.,39,3
+304,2. Vkladanie.,87,7
+305,1. Odstranovanie.,36,3
+306,1. Odstranovanie.,73,9
+307,1. Odstranovanie.,74,3
+308,1. Odstranovanie.,38,3
+309,2. Vkladanie.,78,8
+310,1. Odstranovanie.,38,3
+311,2. Vkladanie.,39,3
+312,2. Vkladanie.,39,3
+313,2. Vkladanie.,74,7
+314,2. Vkladanie.,75,7
+315,2. Vkladanie.,38,3
+316,2. Vkladanie.,75,3
+317,1. Odstranovanie.,43,3
+318,2. Vkladanie.,39,3
+319,2. Vkladanie.,75,3
+320,1. Odstranovanie.,74,7
+321,2. Vkladanie.,74,7
+322,1. Odstranovanie.,74,3
+323,2. Vkladanie.,38,3
+324,2. Vkladanie.,74,3
+325,1. Odstranovanie.,74,7
+326,1. Odstranovanie.,73,7
+327,1. Odstranovanie.,38,3
+328,1. Odstranovanie.,38,3
+329,1. Odstranovanie.,74,3
+330,2. Vkladanie.,39,3
+331,2. Vkladanie.,75,3
+332,1. Odstranovanie.,75,3
+333,2. Vkladanie.,39,4
+334,2. Vkladanie.,75,7
+335,2. Vkladanie.,75,7
+336,2. Vkladanie.,75,3
+337,2. Vkladanie.,39,3
+338,2. Vkladanie.,75,3
+339,1. Odstranovanie.,74,7
+340,2. Vkladanie.,38,3
+341,2. Vkladanie.,30,3
+342,1. Odstranovanie.,59,5
+343,2. Vkladanie.,59,3
+344,1. Odstranovanie.,68,6
+345,2. Vkladanie.,12316,6
+346,2. Vkladanie.,352,26
+347,2. Vkladanie.,67,3
+348,2. Vkladanie.,72,7
+349,1. Odstranovanie.,80,7
+350,1. Odstranovanie.,72,3
+351,1. Odstranovanie.,73,3
+352,1. Odstranovanie.,37,3
+353,2. Vkladanie.,38,3
+354,1. Odstranovanie.,75,3
+355,2. Vkladanie.,37,3
+356,1. Odstranovanie.,73,7
+357,1. Odstranovanie.,83,16
+358,1. Odstranovanie.,72,23
+359,1. Odstranovanie.,39,4
+360,2. Vkladanie.,75,4
+361,2. Vkladanie.,75,3
+362,1. Odstranovanie.,47,21
+363,2. Vkladanie.,76,3
+364,2. Vkladanie.,70,3
+365,2. Vkladanie.,68,7
+366,1. Odstranovanie.,72,7
+367,2. Vkladanie.,81,8
+368,1. Odstranovanie.,72,4
+369,2. Vkladanie.,78,4
+370,1. Odstranovanie.,39,4
+371,2. Vkladanie.,78,7
+372,2. Vkladanie.,72,15
+373,2. Vkladanie.,67,3
+374,2. Vkladanie.,76,25
+375,1. Odstranovanie.,74,7
+376,2. Vkladanie.,185,4
+377,1. Odstranovanie.,63,6
+378,1. Odstranovanie.,302,7
+379,1. Odstranovanie.,69,45
+380,1. Odstranovanie.,65,3
+381,2. Vkladanie.,69,3
+382,2. Vkladanie.,32,4
+383,1. Odstranovanie.,31,3
+384,2. Vkladanie.,60,6
+385,1. Odstranovanie.,66,3
+386,2. Vkladanie.,39,4
+387,2. Vkladanie.,40,4
+388,1. Odstranovanie.,97,7
+389,1. Odstranovanie.,95,10
+390,2. Vkladanie.,37,4
+391,2. Vkladanie.,70,7
+392,1. Odstranovanie.,37,3
+393,1. Odstranovanie.,54,3
+394,1. Odstranovanie.,23,2
+395,1. Odstranovanie.,23,2
+396,1. Odstranovanie.,44,2
+397,2. Vkladanie.,45,4
+398,2. Vkladanie.,45,2
+399,1. Odstranovanie.,44,2
+400,2. Vkladanie.,23,2
+401,1. Odstranovanie.,23,2
+402,2. Vkladanie.,22,2
+403,2. Vkladanie.,42,4
+404,2. Vkladanie.,42,4
+405,1. Odstranovanie.,42,2
+406,1. Odstranovanie.,42,4
+407,2. Vkladanie.,42,4
+408,2. Vkladanie.,22,2
+409,1. Odstranovanie.,21,2
+410,1. Odstranovanie.,42,2
+411,2. Vkladanie.,42,4
+412,1. Odstranovanie.,21,2
+413,1. Odstranovanie.,42,2
+414,1. Odstranovanie.,48,4
+415,2. Vkladanie.,23,3
+416,1. Odstranovanie.,42,2
+417,1. Odstranovanie.,21,2
+418,1. Odstranovanie.,21,2
+419,1. Odstranovanie.,21,2
+420,2. Vkladanie.,22,2
+421,2. Vkladanie.,42,4
+422,1. Odstranovanie.,42,2
+423,1. Odstranovanie.,21,2
+424,1. Odstranovanie.,42,2
+425,2. Vkladanie.,42,4
+426,2. Vkladanie.,42,4
+427,1. Odstranovanie.,42,4
+428,1. Odstranovanie.,42,4
+429,1. Odstranovanie.,21,2
+430,2. Vkladanie.,42,2
+431,1. Odstranovanie.,42,2
+432,1. Odstranovanie.,21,2
+433,1. Odstranovanie.,42,4
+434,1. Odstranovanie.,21,2
+435,1. Odstranovanie.,41,2
+436,2. Vkladanie.,42,2
+437,1. Odstranovanie.,42,4
+438,1. Odstranovanie.,22,2
+439,1. Odstranovanie.,42,4
+440,1. Odstranovanie.,42,4
+441,1. Odstranovanie.,94,2
+442,1. Odstranovanie.,42,4
+443,1. Odstranovanie.,34,2
+444,2. Vkladanie.,25,3
+445,2. Vkladanie.,74,4
+446,2. Vkladanie.,64,6
+447,2. Vkladanie.,22,2
+448,1. Odstranovanie.,62,4
+449,1. Odstranovanie.,70,2
+450,2. Vkladanie.,42,4
+451,1. Odstranovanie.,21,2
+452,2. Vkladanie.,22,2
+453,2. Vkladanie.,42,4
+454,1. Odstranovanie.,21,2
+455,2. Vkladanie.,22,2
+456,2. Vkladanie.,42,2
+457,2. Vkladanie.,42,4
+458,2. Vkladanie.,22,2
+459,2. Vkladanie.,42,4
+460,2. Vkladanie.,42,2
+461,1. Odstranovanie.,42,4
+462,1. Odstranovanie.,21,2
+463,1. Odstranovanie.,21,2
+464,2. Vkladanie.,42,2
+465,2. Vkladanie.,42,4
+466,2. Vkladanie.,22,2
+467,2. Vkladanie.,22,2
+468,1. Odstranovanie.,21,2
+469,1. Odstranovanie.,42,2
+470,1. Odstranovanie.,42,4
+471,2. Vkladanie.,42,4
+472,2. Vkladanie.,42,4
+473,1. Odstranovanie.,64,2
+474,2. Vkladanie.,63,3
+475,2. Vkladanie.,74,2
+476,2. Vkladanie.,77,6
+477,2. Vkladanie.,137,7
+478,2. Vkladanie.,44,3
+479,2. Vkladanie.,103,3
+480,2. Vkladanie.,33,3
+481,1. Odstranovanie.,69,7
+482,1. Odstranovanie.,61,6
+483,1. Odstranovanie.,33,3
+484,1. Odstranovanie.,36,3
+485,2. Vkladanie.,92,4
+486,2. Vkladanie.,45,5
+487,2. Vkladanie.,24,2
+488,1. Odstranovanie.,45,4
+489,2. Vkladanie.,45,2
+490,1. Odstranovanie.,47,4
+491,2. Vkladanie.,48,2
+492,2. Vkladanie.,46,3
+493,2. Vkladanie.,54,6
+494,2. Vkladanie.,23,2
+495,2. Vkladanie.,44,2
+496,1. Odstranovanie.,44,2
+497,1. Odstranovanie.,44,2
+498,1. Odstranovanie.,23,2
+499,2. Vkladanie.,44,4
+500,2. Vkladanie.,23,2
+501,2. Vkladanie.,23,2
+502,2. Vkladanie.,23,2
+503,1. Odstranovanie.,23,2
+504,2. Vkladanie.,44,2
+505,1. Odstranovanie.,49,2
+506,1. Odstranovanie.,42,2
+507,1. Odstranovanie.,21,2
+508,1. Odstranovanie.,21,2
+509,1. Odstranovanie.,42,2
+510,1. Odstranovanie.,42,4
+511,2. Vkladanie.,22,2
+512,1. Odstranovanie.,42,4
+513,2. Vkladanie.,22,2
+514,2. Vkladanie.,42,2
+515,1. Odstranovanie.,21,2
+516,1. Odstranovanie.,42,4
+517,1. Odstranovanie.,21,2
+518,1. Odstranovanie.,42,2
+519,2. Vkladanie.,139,2
+520,2. Vkladanie.,136,37
+521,2. Vkladanie.,78,4
+522,1. Odstranovanie.,349,9
+523,2. Vkladanie.,39,4
+524,1. Odstranovanie.,39,4
+525,2. Vkladanie.,75,3
+526,2. Vkladanie.,39,4
+527,1. Odstranovanie.,50,3
+528,2. Vkladanie.,75,7
+529,1. Odstranovanie.,74,3
+530,2. Vkladanie.,75,7
+531,1. Odstranovanie.,124,7
+532,1. Odstranovanie.,45,2
+533,1. Odstranovanie.,44,4
+534,1. Odstranovanie.,44,2
+535,2. Vkladanie.,43,6
+536,2. Vkladanie.,42,4
+537,2. Vkladanie.,22,2
+538,1. Odstranovanie.,42,2
+539,2. Vkladanie.,42,4
+540,1. Odstranovanie.,52,6
+541,2. Vkladanie.,68,8
+542,1. Odstranovanie.,22,4
+543,1. Odstranovanie.,42,4
+544,2. Vkladanie.,22,2
+545,1. Odstranovanie.,58,4
+546,2. Vkladanie.,42,2
+547,1. Odstranovanie.,21,2
+548,2. Vkladanie.,22,2
+549,1. Odstranovanie.,42,4
+550,1. Odstranovanie.,21,2
+551,1. Odstranovanie.,43,4
+552,1. Odstranovanie.,42,4
+553,2. Vkladanie.,42,4
+554,2. Vkladanie.,42,2
+555,2. Vkladanie.,42,4
+556,1. Odstranovanie.,41,2
+557,1. Odstranovanie.,41,4
+558,2. Vkladanie.,42,2
+559,2. Vkladanie.,22,2
+560,2. Vkladanie.,22,2
+561,1. Odstranovanie.,21,2
+562,1. Odstranovanie.,21,2
+563,1. Odstranovanie.,42,4
+564,2. Vkladanie.,22,2
+565,2. Vkladanie.,42,4
+566,2. Vkladanie.,22,2
+567,1. Odstranovanie.,42,2
+568,1. Odstranovanie.,21,2
+569,2. Vkladanie.,42,4
+570,2. Vkladanie.,42,4
+571,2. Vkladanie.,42,4
+572,2. Vkladanie.,42,5
+573,2. Vkladanie.,42,2
+574,1. Odstranovanie.,42,2
+575,2. Vkladanie.,42,4
+576,1. Odstranovanie.,42,2
+577,2. Vkladanie.,42,4
+578,1. Odstranovanie.,21,2
+579,2. Vkladanie.,42,2
+580,2. Vkladanie.,42,2
+581,1. Odstranovanie.,22,2
+582,2. Vkladanie.,42,2
+583,2. Vkladanie.,42,2
+584,1. Odstranovanie.,21,2
+585,1. Odstranovanie.,21,2
+586,1. Odstranovanie.,42,2
+587,1. Odstranovanie.,42,2
+588,1. Odstranovanie.,21,2
+589,1. Odstranovanie.,42,2
+590,2. Vkladanie.,42,2
+591,1. Odstranovanie.,21,2
+592,2. Vkladanie.,22,2
+593,1. Odstranovanie.,41,2
+594,2. Vkladanie.,42,2
+595,1. Odstranovanie.,42,2
+596,2. Vkladanie.,42,2
+597,1. Odstranovanie.,42,4
+598,2. Vkladanie.,22,2
+599,2. Vkladanie.,46,2
+600,1. Odstranovanie.,42,2
+601,1. Odstranovanie.,42,4
+602,2. Vkladanie.,42,4
+603,2. Vkladanie.,22,2
+604,1. Odstranovanie.,21,2
+605,1. Odstranovanie.,42,2
+606,1. Odstranovanie.,21,2
+607,1. Odstranovanie.,42,2
+608,2. Vkladanie.,22,2
+609,1. Odstranovanie.,22,2
+610,2. Vkladanie.,22,2
+611,2. Vkladanie.,42,4
+612,2. Vkladanie.,42,2
+613,2. Vkladanie.,22,2
+614,1. Odstranovanie.,45,2
+615,1. Odstranovanie.,21,2
+616,1. Odstranovanie.,41,2
+617,1. Odstranovanie.,21,2
+618,1. Odstranovanie.,22,2
+619,2. Vkladanie.,42,4
+620,2. Vkladanie.,42,2
+621,1. Odstranovanie.,21,2
+622,1. Odstranovanie.,21,2
+623,1. Odstranovanie.,21,2
+624,1. Odstranovanie.,21,2
+625,1. Odstranovanie.,21,2
+626,1. Odstranovanie.,42,4
+627,1. Odstranovanie.,42,2
+628,2. Vkladanie.,22,2
+629,2. Vkladanie.,25,2
+630,1. Odstranovanie.,42,2
+631,2. Vkladanie.,42,2
+632,2. Vkladanie.,42,4
+633,2. Vkladanie.,22,2
+634,2. Vkladanie.,42,4
+635,1. Odstranovanie.,21,2
+636,2. Vkladanie.,22,2
+637,1. Odstranovanie.,25,2
+638,2. Vkladanie.,83,6
+639,1. Odstranovanie.,33,3
+640,2. Vkladanie.,38,3
+641,2. Vkladanie.,79,6
+642,2. Vkladanie.,66,6
+643,1. Odstranovanie.,46,4
+644,1. Odstranovanie.,23,2
+645,2. Vkladanie.,23,2
+646,2. Vkladanie.,45,4
+647,1. Odstranovanie.,23,2
+648,2. Vkladanie.,23,2
+649,2. Vkladanie.,23,2
+650,1. Odstranovanie.,23,2
+651,2. Vkladanie.,44,4
+652,1. Odstranovanie.,23,2
+653,2. Vkladanie.,23,2
+654,1. Odstranovanie.,61,2
+655,2. Vkladanie.,22,2
+656,2. Vkladanie.,42,2
+657,1. Odstranovanie.,42,4
+658,1. Odstranovanie.,21,2
+659,2. Vkladanie.,42,4
+660,2. Vkladanie.,22,2
+661,1. Odstranovanie.,42,2
+662,2. Vkladanie.,42,2
+663,2. Vkladanie.,42,2
+664,2. Vkladanie.,22,2
+665,1. Odstranovanie.,42,2
+666,2. Vkladanie.,22,2
+667,2. Vkladanie.,26,2
+668,1. Odstranovanie.,79,3
+669,2. Vkladanie.,42,5
+670,2. Vkladanie.,42,2
+671,2. Vkladanie.,22,2
+672,2. Vkladanie.,42,2
+673,1. Odstranovanie.,35,2
+674,1. Odstranovanie.,22,3
+675,1. Odstranovanie.,68,4
+676,2. Vkladanie.,43,6
+677,1. Odstranovanie.,42,2
+678,1. Odstranovanie.,22,2
+679,1. Odstranovanie.,21,2
+680,2. Vkladanie.,59,3
+681,2. Vkladanie.,22,2
+682,2. Vkladanie.,42,4
+683,2. Vkladanie.,22,2
+684,2. Vkladanie.,42,4
+685,2. Vkladanie.,42,4
+686,2. Vkladanie.,22,2
+687,2. Vkladanie.,42,4
+688,2. Vkladanie.,22,2
+689,2. Vkladanie.,42,4
+690,2. Vkladanie.,42,2
+691,2. Vkladanie.,22,2
+692,2. Vkladanie.,42,4
+693,2. Vkladanie.,25,2
+694,2. Vkladanie.,42,2
+695,2. Vkladanie.,42,2
+696,2. Vkladanie.,42,2
+697,2. Vkladanie.,22,2
+698,2. Vkladanie.,22,2
+699,2. Vkladanie.,42,4
+700,2. Vkladanie.,22,2
+701,2. Vkladanie.,22,2
+702,2. Vkladanie.,22,2
+703,2. Vkladanie.,42,4
+704,2. Vkladanie.,22,2
+705,2. Vkladanie.,42,4
+706,,-842150451,-84215045
+707,,-842150451,-84215045
+708,,-842150451,-84215045
+709,,-842150451,-84215045
+710,,-842150451,-84215045
+711,,-842150451,-84215045
+712,,-842150451,-84215045
+713,,-842150451,-84215045
+714,,-842150451,-84215045
+715,,-842150451,-84215045
+716,,-842150451,-84215045
+717,,-842150451,-84215045
+718,,-842150451,-84215045
+719,,-842150451,-84215045
+720,,-842150451,-84215045
+721,,-842150451,-84215045
+722,,-842150451,-84215045
+723,,-842150451,-84215045
+724,,-842150451,-84215045
+725,,-842150451,-84215045
+726,,-842150451,-84215045
+727,,-842150451,-84215045
+728,,-842150451,-84215045
+729,,-842150451,-84215045
+730,,-842150451,-84215045
+731,,-842150451,-84215045
+732,,-842150451,-84215045
+733,,-842150451,-84215045
+734,,-842150451,-84215045
+735,,-842150451,-84215045
+736,,-842150451,-84215045
+737,,-842150451,-84215045
+738,,-842150451,-84215045
+739,,-842150451,-84215045
+740,,-842150451,-84215045
+741,,-842150451,-84215045
+742,,-842150451,-84215045
+743,,-842150451,-84215045
+744,,-842150451,-84215045
+745,,-842150451,-84215045
+746,,-842150451,-84215045
+747,,-842150451,-84215045
+748,,-842150451,-84215045
+749,,-842150451,-84215045
+750,,-842150451,-84215045
+751,,-842150451,-84215045
+752,,-842150451,-84215045
+753,,-842150451,-84215045
+754,,-842150451,-84215045
+755,,-842150451,-84215045
+756,,-842150451,-84215045
+757,,-842150451,-84215045
+758,,-842150451,-84215045
+759,,-842150451,-84215045
+760,,-842150451,-84215045
+761,,-842150451,-84215045
+762,,-842150451,-84215045
+763,,-842150451,-84215045
+764,,-842150451,-84215045
+765,,-842150451,-84215045
+766,,-842150451,-84215045
+767,,-842150451,-84215045
+768,,-842150451,-84215045
+769,,-842150451,-84215045
+770,,-842150451,-84215045
+771,,-842150451,-84215045
+772,,-842150451,-84215045
+773,,-842150451,-84215045
+774,,-842150451,-84215045
+775,,-842150451,-84215045
+776,,-842150451,-84215045
+777,,-842150451,-84215045
+778,,-842150451,-84215045
+779,,-842150451,-84215045
+780,,-842150451,-84215045
+781,,-842150451,-84215045
+782,,-842150451,-84215045
+783,,-842150451,-84215045
+784,,-842150451,-84215045
+785,,-842150451,-84215045
+786,,-842150451,-84215045
+787,,-842150451,-84215045
+788,,-842150451,-84215045
+789,,-842150451,-84215045
+790,,-842150451,-84215045
+791,,-842150451,-84215045
+792,,-842150451,-84215045
+793,,-842150451,-84215045
+794,,-842150451,-84215045
+795,,-842150451,-84215045
+796,,-842150451,-84215045
+797,,-842150451,-84215045
+798,,-842150451,-84215045
+799,,-842150451,-84215045
+800,,-842150451,-84215045
+801,,-842150451,-84215045
+802,,-842150451,-84215045
+803,,-842150451,-84215045
+804,,-842150451,-84215045
+805,,-842150451,-84215045
+806,,-842150451,-84215045
+807,,-842150451,-84215045
+808,,-842150451,-84215045
+809,,-842150451,-84215045
+810,,-842150451,-84215045
+811,,-842150451,-84215045
+812,,-842150451,-84215045
+813,,-842150451,-84215045
+814,,-842150451,-84215045
+815,,-842150451,-84215045
+816,,-842150451,-84215045
+817,,-842150451,-84215045
+818,,-842150451,-84215045
+819,,-842150451,-84215045
+820,,-842150451,-84215045
+821,,-842150451,-84215045
+822,,-842150451,-84215045
+823,,-842150451,-84215045
+824,,-842150451,-84215045
+825,,-842150451,-84215045
+826,,-842150451,-84215045
+827,,-842150451,-84215045
+828,,-842150451,-84215045
+829,,-842150451,-84215045
+830,,-842150451,-84215045
+831,,-842150451,-84215045
+832,,-842150451,-84215045
+833,,-842150451,-84215045
+834,,-842150451,-84215045
+835,,-842150451,-84215045
+836,,-842150451,-84215045
+837,,-842150451,-84215045
+838,,-842150451,-84215045
+839,,-842150451,-84215045
+840,,-842150451,-84215045
+841,,-842150451,-84215045
+842,,-842150451,-84215045
+843,,-842150451,-84215045
+844,,-842150451,-84215045
+845,,-842150451,-84215045
+846,,-842150451,-84215045
+847,,-842150451,-84215045
+848,,-842150451,-84215045
+849,,-842150451,-84215045
+850,,-842150451,-84215045
+851,,-842150451,-84215045
+852,,-842150451,-84215045
+853,,-842150451,-84215045
+854,,-842150451,-84215045
+855,,-842150451,-84215045
+856,,-842150451,-84215045
+857,,-842150451,-84215045
+858,,-842150451,-84215045
+859,,-842150451,-84215045
+860,,-842150451,-84215045
+861,,-842150451,-84215045
+862,,-842150451,-84215045
+863,,-842150451,-84215045
+864,,-842150451,-84215045
+865,,-842150451,-84215045
+866,,-842150451,-84215045
+867,,-842150451,-84215045
+868,,-842150451,-84215045
+869,,-842150451,-84215045
+870,,-842150451,-84215045
+871,,-842150451,-84215045
+872,,-842150451,-84215045
+873,,-842150451,-84215045
+874,,-842150451,-84215045
+875,,-842150451,-84215045
+876,,-842150451,-84215045
+877,,-842150451,-84215045
+878,,-842150451,-84215045
+879,,-842150451,-84215045
+880,,-842150451,-84215045
+881,,-842150451,-84215045
+882,,-842150451,-84215045
+883,,-842150451,-84215045
+884,,-842150451,-84215045
+885,,-842150451,-84215045
+886,,-842150451,-84215045
+887,,-842150451,-84215045
+888,,-842150451,-84215045
+889,,-842150451,-84215045
+890,,-842150451,-84215045
+891,,-842150451,-84215045
+892,,-842150451,-84215045
+893,,-842150451,-84215045
+894,,-842150451,-84215045
+895,,-842150451,-84215045
+896,,-842150451,-84215045
+897,,-842150451,-84215045
+898,,-842150451,-84215045
+899,,-842150451,-84215045
+900,,-842150451,-84215045
+901,,-842150451,-84215045
+902,,-842150451,-84215045
+903,,-842150451,-84215045
+904,,-842150451,-84215045
+905,,-842150451,-84215045
+906,,-842150451,-84215045
+907,,-842150451,-84215045
+908,,-842150451,-84215045
+909,,-842150451,-84215045
+910,,-842150451,-84215045
+911,,-842150451,-84215045
+912,,-842150451,-84215045
+913,,-842150451,-84215045
+914,,-842150451,-84215045
+915,,-842150451,-84215045
+916,,-842150451,-84215045
+917,,-842150451,-84215045
+918,,-842150451,-84215045
+919,,-842150451,-84215045
+920,,-842150451,-84215045
+921,,-842150451,-84215045
+922,,-842150451,-84215045
+923,,-842150451,-84215045
+924,,-842150451,-84215045
+925,,-842150451,-84215045
+926,,-842150451,-84215045
+927,,-842150451,-84215045
+928,,-842150451,-84215045
+929,,-842150451,-84215045
+930,,-842150451,-84215045
+931,,-842150451,-84215045
+932,,-842150451,-84215045
+933,,-842150451,-84215045
+934,,-842150451,-84215045
+935,,-842150451,-84215045
+936,,-842150451,-84215045
+937,,-842150451,-84215045
+938,,-842150451,-84215045
+939,,-842150451,-84215045
+940,,-842150451,-84215045
+941,,-842150451,-84215045
+942,,-842150451,-84215045
+943,,-842150451,-84215045
+944,,-842150451,-84215045
+945,,-842150451,-84215045
+946,,-842150451,-84215045
+947,,-842150451,-84215045
+948,,-842150451,-84215045
+949,,-842150451,-84215045
+950,,-842150451,-84215045
+951,,-842150451,-84215045
+952,,-842150451,-84215045
+953,,-842150451,-84215045
+954,,-842150451,-84215045
+955,,-842150451,-84215045
+956,,-842150451,-84215045
+957,,-842150451,-84215045
+958,,-842150451,-84215045
+959,,-842150451,-84215045
+960,,-842150451,-84215045
+961,,-842150451,-84215045
+962,,-842150451,-84215045
+963,,-842150451,-84215045
+964,,-842150451,-84215045
+965,,-842150451,-84215045
+966,,-842150451,-84215045
+967,,-842150451,-84215045
+968,,-842150451,-84215045
+969,,-842150451,-84215045
+970,,-842150451,-84215045
+971,,-842150451,-84215045
+972,,-842150451,-84215045
+973,,-842150451,-84215045
+974,,-842150451,-84215045
+975,,-842150451,-84215045
+976,,-842150451,-84215045
+977,,-842150451,-84215045
+978,,-842150451,-84215045
+979,,-842150451,-84215045
+980,,-842150451,-84215045
+981,,-842150451,-84215045
+982,,-842150451,-84215045
+983,,-842150451,-84215045
+984,,-842150451,-84215045
+985,,-842150451,-84215045
+986,,-842150451,-84215045
+987,,-842150451,-84215045
+988,,-842150451,-84215045
+989,,-842150451,-84215045
+990,,-842150451,-84215045
+991,,-842150451,-84215045
+992,,-842150451,-84215045
+993,,-842150451,-84215045
+994,,-842150451,-84215045
+995,,-842150451,-84215045
+996,,-842150451,-84215045
+997,,-842150451,-84215045
+998,,-842150451,-84215045
+999,,-842150451,-84215045
+1000,,-842150451,-842150451

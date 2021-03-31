@@ -6,7 +6,7 @@
 
 #include "../time.h";
 
-#define POCET_OPERACII 1000
+#define POCET_OPERACII 100000
 #define FILE "vysledky/uloha2/"
 
 namespace std {

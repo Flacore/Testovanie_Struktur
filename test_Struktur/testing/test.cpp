@@ -368,7 +368,8 @@ void Test::uloha6()
 
 void Test::autoTesting()
 {
-	/*
+	//List
+	cout << "Start testing structure List." << endl;
 	for (int i = 1; i <= 3; i++) {
 
 		std::string csvName;
@@ -402,15 +403,20 @@ void Test::autoTesting()
 		ADT_List* listTest = new ADT_List(vloz, zrus, index, set, csvName);
 		(*listTest).start_testing();
 		delete listTest;
+		cout << "Done doing 'Linked/Array list'-" << csvName << endl;
 
 
 		ADT_CircularList* twolistTest = new ADT_CircularList(vloz, zrus, index, set, csvName);
 		(*twolistTest).start_testing();
 		delete twolistTest;
+		cout << "Done doing 'CircularList'-" << csvName << endl;
+
+		cout << "Done doing -" << csvName << endl;
 	}
-	*/
+	cout << "List done!" << endl;
 
-
+	//PriorityQueue
+	cout << "Start testing structure PriorityQueue." << endl;
 	for (int i = 1; i <= 3; i++) {
 
 		std::string csvName;
@@ -441,15 +447,17 @@ void Test::autoTesting()
 		ADT_PriorityFront* pFront = new ADT_PriorityFront(vloz, vyber, ukaz, csvName);
 		(*pFront).do_testing();
 		delete pFront;
-
+		cout << "Done doing 'PriorityFront'-" << csvName << endl;
 
 		ADT_TwoList* twoListTest = new ADT_TwoList(vloz, vyber, ukaz, csvName);
 		(*twoListTest).do_testing();
 		delete twoListTest;
+		cout << "Done doing 'TwoList'-" << csvName << endl;
 	}
+	cout << "PriorityQueue done!" << endl;
 
-
-
+	//Matrix
+	cout << "Start testing structure Matrix." << endl;
 	for (int i = 1; i <= 2; i++) {
 		std::string csvName;
 		int choice;
@@ -473,11 +481,14 @@ void Test::autoTesting()
 		ADT_Matrix* matrixTest = new ADT_Matrix(choice, csvName);
 		(*matrixTest).do_testing();
 		delete matrixTest;
+		cout << "Done doing -" << csvName << endl;
 	}
+	cout << "Matrix done!" << endl;
 	
-
 	//TODO
 	/*
+	//ByteMap
+	cout << "Start testing structure ByteMap." << endl;
 	for (int i = 1; i <= 2; i++) {
 		std::string csvName;
 		int vloz, zrus, LogOp, SetOp;
@@ -503,7 +514,9 @@ void Test::autoTesting()
 		ADT_BitMap* bitMapTest = new ADT_BitMap(vloz, zrus, LogOp, SetOp, csvName);
 		(*bitMapTest).do_testing();
 		delete bitMapTest;
+		cout << "Done doing -" << csvName << endl;
 	}
+	cout << "ByteMap done!" << endl;
 	*/
 }
 

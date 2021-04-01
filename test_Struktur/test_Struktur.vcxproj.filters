@@ -45,6 +45,9 @@
     <Filter Include="Source Files\testing\test">
       <UniqueIdentifier>{2b824996-6745-47f3-b664-5a9ef2fd893d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Diagrams">
+      <UniqueIdentifier>{51e2eeaa-50d9-44b9-9df5-7d6522e69b4a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="testing\file.cpp">
@@ -178,5 +181,22 @@
     <ClInclude Include="testing\test\ADT_TwoList.h">
       <Filter>Source Files\testing\test</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FullProgramDiagram.cd">
+      <Filter>Diagrams</Filter>
+    </None>
+    <None Include="ADT_BitMapDiagram.cd">
+      <Filter>Diagrams</Filter>
+    </None>
+    <None Include="ADT_MatrixDiagram.cd">
+      <Filter>Diagrams</Filter>
+    </None>
+    <None Include="ADT_PriorityQueueDiagram.cd">
+      <Filter>Diagrams</Filter>
+    </None>
+    <None Include="ADT_ListDiagram.cd">
+      <Filter>Diagrams</Filter>
+    </None>
   </ItemGroup>
 </Project>

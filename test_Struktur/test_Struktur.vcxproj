@@ -184,6 +184,13 @@
     <ClInclude Include="testing\test\ADT_TwoList.h" />
     <ClInclude Include="testing\time.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ADT_BitMapDiagram.cd" />
+    <None Include="ADT_ListDiagram.cd" />
+    <None Include="ADT_MatrixDiagram.cd" />
+    <None Include="ADT_PriorityQueueDiagram.cd" />
+    <None Include="FullProgramDiagram.cd" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

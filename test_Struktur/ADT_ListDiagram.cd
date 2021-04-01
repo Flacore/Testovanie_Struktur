@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="std::ADT_List">
+    <Position X="3.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABgAAUIAAyAgAAAAEAA0AABKwIAQBAiAAA=</HashCode>
+      <FileName>testing\test\ADT_List.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="time_" />
+      <Field Name="array_" />
+      <Field Name="list_" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="std::ADT_CircularList">
+    <Position X="13" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQBAAAUAAASAgAAAAAAAlAAhKQIAQBAiAAA=</HashCode>
+      <FileName>testing\test\ADT_CircularList.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="time_" />
+      <Field Name="list_" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Time">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAIAgAAAAAgAAAAAEAEAAAQA=</HashCode>
+      <FileName>testing\time.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="structures::ArrayList&lt;T&gt;">
+    <Position X="6.75" Y="1.5" Width="2" />
+    <NestedTypes>
+      <Class Name="structures::ArrayList&lt;T&gt;::ArrayListIterator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>structures\list\array_list.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAgAABAAAAACYgAAABAQAEAAAEAAgAgEAECAAA=</HashCode>
+      <FileName>structures\list\array_list.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="structures::LinkedList&lt;T&gt;">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <NestedTypes>
+      <Class Name="structures::LinkedList&lt;T&gt;::LinkedListIterator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>structures\list\linked_list.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAABBQAAAACYEABABAQAEAAAEAAAAgEIECAAA=</HashCode>
+      <FileName>structures\list\linked_list.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="structures::DoublyCircularLinkedList&lt;T&gt;">
+    <Position X="9" Y="3.25" Width="3.25" />
+    <NestedTypes>
+      <Class Name="structures::DoublyCircularLinkedList&lt;T&gt;::DoublyCircularLinkedListIterator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>structures\list\doubly_circular_linked_list.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAABQAAAQCYEAAABAQAEAAAEAAAAgEoECAAA=</HashCode>
+      <FileName>structures\list\doubly_circular_linked_list.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

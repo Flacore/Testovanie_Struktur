@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="std::ADT_Matrix">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>EACAAAAAACEAAAAEIACAAAAAAgAEIACEMAAAAAggAAA=</HashCode>
+      <FileName>testing\test\ADT_Matrix.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="time_" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Time">
+    <Position X="4.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAIAgAAAAAgAAAAAEAEAAAQA=</HashCode>
+      <FileName>testing\time.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="structures::CoherantMatrix&lt;T&gt;">
+    <Position X="7" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAEAgAAABAAAEAAAAAAAAgACAAAAA=</HashCode>
+      <FileName>structures\matrix\coherant_matrix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="structures::IncoherantMatrix&lt;T&gt;">
+    <Position X="10" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAgABABAAAEAAAAAAAAgAQAAAAA=</HashCode>
+      <FileName>structures\matrix\incoherant_matrix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

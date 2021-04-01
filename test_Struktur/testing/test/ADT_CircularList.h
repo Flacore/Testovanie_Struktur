@@ -87,6 +87,8 @@ namespace std {
 		for (i = 0; i < POCET_OPERACII; i++) {
 			choice = (rand() % 100) + 0;
 
+			cout << "n." << i << endl;
+
 			if (choice <= zrus_) {
 				del();
 			}

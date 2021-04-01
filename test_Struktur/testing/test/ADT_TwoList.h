@@ -85,6 +85,8 @@ namespace std {
 		for (i = 0; i < POCET_OPERACII; i++) {
 			choice = (rand() % 100) + 0;
 
+			cout << "n." << i << endl;
+
 			if (choice <= vloz_ || recap > 5) {
 				choice = 1;
 				oInsert();

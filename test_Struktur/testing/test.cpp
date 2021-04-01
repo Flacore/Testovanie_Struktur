@@ -368,6 +368,7 @@ void Test::uloha6()
 
 void Test::autoTesting()
 {
+	
 	//List
 	cout << "Start testing structure List." << endl;
 	for (int i = 1; i <= 3; i++) {
@@ -419,6 +420,7 @@ void Test::autoTesting()
 	cout << "Start testing structure PriorityQueue." << endl;
 	for (int i = 1; i <= 3; i++) {
 
+
 		std::string csvName;
 		int vloz, ukaz, vyber;
 
@@ -456,9 +458,10 @@ void Test::autoTesting()
 	}
 	cout << "PriorityQueue done!" << endl;
 
+
 	//Matrix
 	cout << "Start testing structure Matrix." << endl;
-	for (int i = 1; i <= 2; i++) {
+	for (int i = 2; i <= 2; i++) {
 		std::string csvName;
 		int choice;
 
@@ -484,9 +487,8 @@ void Test::autoTesting()
 		cout << "Done doing -" << csvName << endl;
 	}
 	cout << "Matrix done!" << endl;
+
 	
-	//TODO
-	/*
 	//ByteMap
 	cout << "Start testing structure ByteMap." << endl;
 	for (int i = 1; i <= 2; i++) {
@@ -517,7 +519,7 @@ void Test::autoTesting()
 		cout << "Done doing -" << csvName << endl;
 	}
 	cout << "ByteMap done!" << endl;
-	*/
+	
 }
 
 void Test::createScenario(int type)

@@ -221,12 +221,12 @@ namespace std {
 
 			//Min Size -> Max Size
 			if (n < (MAX_SIZE-MIN_SIZE+1)) {
-				M = MIN_SIZE;
-				N = (n + MIN_SIZE);
+				N = MIN_SIZE;
+				M = (n + MIN_SIZE);
 			}
 			else {
-				M = (n + MIN_SIZE) - MAX_SIZE;
-				N = MIN_SIZE;
+				N = (n + MIN_SIZE) - MAX_SIZE;
+				M = MIN_SIZE;
 			}
 
 			file_->addItem(to_string(n + 1));
